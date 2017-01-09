@@ -18,7 +18,7 @@
 <v t="leo.20151213173830.1" a="E"><vh>假如要在近端檢視, 使用下列按鈕</vh>
 <v t="leo.20151213085727.1"><vh>@button pelican-blog</vh></v>
 </v>
-<v t="amd.20151215180106.1"><vh>設定與開發</vh>
+<v t="amd.20151215180106.1" a="E"><vh>設定與開發</vh>
 <v t="amd.20151216151325.1" a="E"><vh>@clean index.html</vh>
 <v t="amd.20161004083800.1" a="E"><vh>html</vh>
 <v t="amd.20161004083800.2"><vh>head</vh></v>
@@ -31,7 +31,7 @@
 <v t="yen.20161016023122.1" a="E"><vh>快捷鍵</vh>
 <v t="yen.20161016023122.2"><vh>投影片快捷鍵</vh></v>
 </v>
-<v t="amd.20161004104820.1"><vh>三大主題教學</vh>
+<v t="amd.20161004104820.1" a="E"><vh>三大主題教學</vh>
 <v t="amd.20161004104641.1" a="E"><vh>主題教學</vh>
 <v t="amd.20161004104641.2"><vh>計算機程式在教什麼?</vh></v>
 </v>
@@ -133,7 +133,7 @@
 <v t="yen.20161011150901.2"><vh>網際動畫範例</vh></v>
 </v>
 </v>
-<v t="yen.20161016012809.1"><vh>各式內容引用範例</vh>
+<v t="yen.20161016012809.1" a="E"><vh>各式內容引用範例</vh>
 <v t="yen.20161016012809.2" a="E"><vh>導入數學符號與方程式</vh>
 <v t="yen.20161016012809.3"><vh>LaTeX 格式方程式</vh></v>
 </v>
@@ -162,10 +162,18 @@
 <v t="amd.20151215170350.1"><vh>以下為 content 目錄中的 md 檔案</vh></v>
 <v t="amd.20151216001126.1"><vh>md 檔案範例</vh></v>
 <v t="amd.20151215170031.1" a="E"><vh>@path ./../content</vh>
+<v t="amd.20160727120222.1"><vh>@edit 20160921.md</vh></v>
 <v t="amd.20160106093454.1" a="E"><vh>yen 所寫的網誌文章</vh>
 <v t="amd.20160727114506.1" a="E"><vh>201609</vh>
-<v t="amd.20160727120222.1"><vh>@edit 20160921.md</vh></v>
 <v t="leo.20161014142409.1"><vh>@edit 20161014.md</vh></v>
+<v t="leo.20161024160947.1"><vh>@edit 20161024.md</vh></v>
+<v t="leo.20161031142610.1"><vh>@edit 20161031.md</vh></v>
+<v t="leo.20161114144449.1"><vh>@edit 20161114.md</vh></v>
+<v t="leo.20161121144805.1"><vh>@edit 20161121.md</vh></v>
+<v t="leo.20161205150442.1"><vh>@edit 20161205.md</vh></v>
+<v t="leo.20161212141544.1"><vh>@edit 20161212.md</vh></v>
+<v t="leo.20170108155305.1"><vh>@edit 20170108.md</vh></v>
+<v t="leo.20170109134358.1"><vh>@edit 20170109.md</vh></v>
 </v>
 </v>
 </v>
@@ -175,6 +183,20 @@
 </v>
 </v>
 <v t="amd.20161004202833.1"><vh>@edit ../README.md</vh></v>
+<v t="yen.20161022111056.1"><vh>@button https server</vh></v>
+<v t="yen.20161022151749.1"><vh>產生 .key 與 .crt</vh></v>
+<v t="leo.20161107164237.2" a="E"><vh>Recovered Nodes</vh>
+<v t="leo.20161107164237.3"><vh>Recovered node "封面投影片內容" from @clean index.html</vh>
+<v t="leo.20161107164237.4"><vh>old:封面投影片內容</vh></v>
+<v t="leo.20161107164237.5"><vh>new:封面投影片內容</vh></v>
+</v>
+</v>
+<v t="leo.20170108154652.1" a="E"><vh>Recovered Nodes</vh>
+<v t="leo.20170108154652.2"><vh>Recovered node "封面投影片內容" from @clean index.html</vh>
+<v t="leo.20170108154652.3"><vh>old:封面投影片內容</vh></v>
+<v t="leo.20170108154652.4"><vh>new:封面投影片內容</vh></v>
+</v>
+</v>
 </vnodes>
 <tnodes>
 <t tx="amd.20151215170031.1"></t>
@@ -303,16 +325,11 @@ print("hello")
 ### 虎科大機械設計工程系
 
 &lt;small&gt;
-Created by [KMOLab](http://chiamingyen.github.io/kmolab/blog/)
+Created by [s40523231](http://chiamingyen.github.io/kmolab/blog/)
 &lt;/small&gt;
 
-[甲班計算機程式課程網誌](blog/index.html)
+[40523231](blog/index.html)
 
-[乙班計算機程式課程網誌](https://mdecourse.github.io/2016fallcpb/blog)
-
-[計算機程式教學影片](https://vimeo.com/user24079973)
-
-[電腦輔助設計室電腦硬體](http://project.mde.tw/blog/yen-dian-nao-fu-zhu-she-ji-shi-dian-nao-pei-zhi.html)
 </t>
 <t tx="amd.20161004104641.1">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
@@ -476,6 +493,78 @@ PLUGINS = ['liquid_tags.notebook', 'summary']
 <t tx="leo.20151213230957.1"># 設定網誌以 md 檔案建立的 file system date 為準, 無需自行設定
 
 DEFAULT_DATE = 'fs'</t>
+<t tx="leo.20161107164237.2"></t>
+<t tx="leo.20161107164237.3">(uncached) amd.20161004095719.2
+Diff...
+  # 2016Fall 計算機程式課程
+  
+  ### 虎科大機械設計工程系
+  
+  &lt;small&gt;
+- Created by [40523209](https://s40523209.github.io/2016fallcp_hw/blog/)
+?                           -                       ^^^^^ ^^^^^^^
++ Created by [40523209](http://s40523209.github.io/kmolab/blog/)
+?                                                  ^^^^ ^
+  &lt;/small&gt;
+  
+- [40523209](blog/index.html)
+?                            -
++ [40523209](blog/index.html)</t>
+<t tx="leo.20161107164237.4"># 2016Fall 計算機程式課程
+
+### 虎科大機械設計工程系
+
+&lt;small&gt;
+Created by [40523209](http://s40523209.github.io/kmolab/blog/)
+&lt;/small&gt;
+
+[40523209](blog/index.html)</t>
+<t tx="leo.20161107164237.5"># 2016Fall 計算機程式課程
+
+### 虎科大機械設計工程系
+
+&lt;small&gt;
+Created by [40523209](https://s40523209.github.io/2016fallcp_hw/blog/)
+&lt;/small&gt;
+
+[40523209](blog/index.html)
+</t>
+<t tx="leo.20170108154652.1"></t>
+<t tx="leo.20170108154652.2">(uncached) amd.20161004095719.2
+Diff...
+  # 2016Fall 計算機程式課程
+  
+  ### 虎科大機械設計工程系
+  
+  &lt;small&gt;
+- Created by [s40523231](http://chiamingyen.github.io/kmolab/blog/)
++ Created by [40523231](https://s40523231.github.io/2016fallcp_hw/blog/)
+  &lt;/small&gt;
+  
+  [40523231](blog/index.html)
+- 
+</t>
+<t tx="leo.20170108154652.3"># 2016Fall 計算機程式課程
+
+### 虎科大機械設計工程系
+
+&lt;small&gt;
+Created by [40523231](https://s40523231.github.io/2016fallcp_hw/blog/)
+&lt;/small&gt;
+
+[40523231](blog/index.html)
+</t>
+<t tx="leo.20170108154652.4"># 2016Fall 計算機程式課程
+
+### 虎科大機械設計工程系
+
+&lt;small&gt;
+Created by [s40523231](http://chiamingyen.github.io/kmolab/blog/)
+&lt;/small&gt;
+
+[40523231](blog/index.html)
+
+</t>
 <t tx="yen.20161011114704.1">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
 @others
@@ -547,7 +636,8 @@ DEFAULT_DATE = 'fs'</t>
 </t>
 <t tx="yen.20161011122932.1">&lt;section&gt;
 @others
-&lt;/section&gt;</t>
+&lt;/section&gt;
+</t>
 <t tx="yen.20161011122957.1">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
 @others
@@ -603,7 +693,8 @@ Brython (Javascript): https://www.brython.info/
 </t>
 <t tx="yen.20161011125115.1">&lt;section&gt;
 @others
-&lt;/section&gt;</t>
+&lt;/section&gt;
+</t>
 <t tx="yen.20161011125115.2">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
 @others
@@ -621,7 +712,8 @@ Brython (Javascript): https://www.brython.info/
 </t>
 <t tx="yen.20161011143808.1">&lt;section&gt;
 @others
-&lt;/section&gt;</t>
+&lt;/section&gt;
+</t>
 <t tx="yen.20161011143808.2">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
 @others
@@ -670,7 +762,8 @@ Brython (Javascript): https://www.brython.info/
 </t>
 <t tx="yen.20161011145156.1">&lt;section&gt;
 @others
-&lt;/section&gt;</t>
+&lt;/section&gt;
+</t>
 <t tx="yen.20161011145156.2">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
 @others
@@ -921,7 +1014,8 @@ Brython (Javascript): https://www.brython.info/
 </t>
 <t tx="yen.20161016012809.1">&lt;section&gt;
 @others
-&lt;/section&gt;</t>
+&lt;/section&gt;
+</t>
 <t tx="yen.20161016012809.2">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
 &lt;!-- 請注意, @others 不可以內縮 --&gt;
@@ -999,7 +1093,8 @@ make.start()
 * 上課筆記與心得寫在個人的 2016fallcp_hw 倉儲 Wiki 中
 * 利用 [ShareX](https://getsharex.com/) 錄製上課操作練習影片
 * 將影片加上說明字幕後, 上傳至個人 [Vimeo](https://vimeo.com/) 與 [Youtube](https://www.youtube.com)
-* 每週更新個人與分組的 Github Pages 投影片與網誌</t>
+* 每週更新個人與分組的 Github Pages 投影片與網誌
+</t>
 <t tx="yen.20161016023122.1">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
 @others
@@ -1017,6 +1112,31 @@ make.start()
 * 按 o 鍵可以切換單張或全域檢視 (overview)
 * 按 b 或 . 鍵可以切換螢幕黑屏 (black)
 * 按 Esc 可以退出全螢幕或全域檢視 (Escape)
+
+</t>
+<t tx="yen.20161022111056.1">@language python
+import os
+import subprocess
+import threading
+import http.server, ssl
+
+def domake():
+    # build directory
+    os.chdir("./../")
+    server_address = ('localhost', 6443)
+    httpd = http.server.HTTPServer(server_address, http.server.SimpleHTTPRequestHandler)
+    httpd.socket = ssl.wrap_socket(httpd.socket,
+                                   server_side=True,
+                                   certfile='localhost.crt',
+                                   keyfile='localhost.key',
+                                   ssl_version=ssl.PROTOCOL_TLSv1)
+    print("6443 https server started")
+    httpd.serve_forever()
+
+# 利用執行緒執行 https 伺服器
+make = threading.Thread(target=domake)
+make.start()</t>
+<t tx="yen.20161022151749.1">sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout localhost.key -out localhost.crt
 
 </t>
 </tnodes>
