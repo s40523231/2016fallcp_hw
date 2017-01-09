@@ -1,44 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>2016Fall CPB 課程網誌 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2017-01-09T00:00:00+08:00</updated><entry><title>期末考週2016fallcp</title><link href="./qi-mo-kao-zhou-2016fallcp.html" rel="alternate"></link><published>2017-01-09T00:00:00+08:00</published><updated>2017-01-09T00:00:00+08:00</updated><author><name>40523231</name></author><id>tag:,2017-01-09:./qi-mo-kao-zhou-2016fallcp.html</id><summary type="html">&lt;!-- 導入 Brython 標準程式庫 --&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>2016Fall CPB 課程網誌 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2017-01-09T14:35:00+08:00</updated><entry><title>2016fallcp 期末考週</title><link href="./2016fallcp-qi-mo-kao-zhou.html" rel="alternate"></link><published>2017-01-09T14:35:00+08:00</published><updated>2017-01-09T14:35:00+08:00</updated><author><name>40523231</name></author><id>tag:,2017-01-09:./2016fallcp-qi-mo-kao-zhou.html</id><summary type="html">&lt;h4&gt;2016fallcp 期末考周&lt;/h4&gt;
 
-&lt;p&gt;w17週心得與程式範例
-放假&lt;/p&gt;
-&lt;p&gt;w16週心得與程式範例
-心得:做了很久 以後會比熟練
-&lt;!-- 導入 Brython 標準程式庫 --&gt;&lt;/p&gt;
-&lt;script type="text/javascript" 
-    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
-&lt;/script&gt;
 
-&lt;!-- 啟動 Brython --&gt;
 
-&lt;script&gt;
-window.onload=function(){
-brython(1);
-}
-&lt;/script&gt;
+&lt;p&gt;W17 週心得與程式範例:&lt;/p&gt;
+&lt;p&gt;W16 週心得與程式範例:&lt;/p&gt;
+&lt;p&gt;W15 週心得與程式範例:&lt;/p&gt;
+&lt;p&gt;其中各週心得請嵌入個人現場操作 vimeo 影片&lt;/p&gt;
+&lt;p&gt;以 pre 附上練習的範例執行,以及課程影片摘要&lt;/p&gt;</summary><category term="每週練習"></category></entry><entry><title>w16</title><link href="./w16.html" rel="alternate"></link><published>2016-12-26T14:35:00+08:00</published><updated>2016-12-26T14:35:00+08:00</updated><author><name>40523209</name></author><id>tag:,2016-12-26:./w16.html</id><summary type="html">&lt;h4&gt;W16&lt;/h4&gt;
 
-&lt;script type="text/python3"&gt;
-from browser import alert
-import random
 
-ans = random.randint(1, 100)
 
-a_in = int(input("輸入整數:"))
-guess = 1
-
-while ans != a_in:
-    if a_in &lt; ans:
-        a_in = int(input("too small"))
-    else:
-        a_in = int(input("too big"))
-    guess += 1
-
-alert("恭喜答對 ,一共猜了" + (str(guess)) + "次")
-&lt;/script&gt;
-
-&lt;p&gt;w15週心得與程式範例
-心得:&lt;/p&gt;</summary><category term="每週練習"></category></entry><entry><title>W16 練習</title><link href="./w16-lian-xi.html" rel="alternate"></link><published>2017-01-08T00:00:00+08:00</published><updated>2017-01-08T00:00:00+08:00</updated><author><name>40523231</name></author><id>tag:,2017-01-08:./w16-lian-xi.html</id><summary type="html">&lt;!-- 導入 Brython 標準程式庫 --&gt;
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
 
 &lt;script type="text/javascript" 
     src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
@@ -52,24 +25,111 @@ brython(1);
 }
 &lt;/script&gt;
 
+&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
+
+&lt;div id="con"&gt;&lt;/div&gt;
+
 &lt;script type="text/python3"&gt;
 from browser import alert
+from browser import document
+from browser import html
+import random
+#print("test")
+#alert("test")
+con1 = document["con"]
+con2 = document["con"]
+#import random 
+#1.利用亂數模組產生標準答案
+#標準答案 = random.randint(1, 100)
+
+#2.取得使用者所猜的整數(可以使用 try except 防止輸入非整數)
+#3.根據使用者與標準答案比較大小,並且回應提示字串
+'''4.假如利用 while 迴圈,可以在使用者沒有猜對之前繼續輸入,並累計猜題次數
+'''
+con1 &lt;= str(標準答案)
+'''
+try:
+    for i in range(1):
+        #con1 &lt;= "test"+"&lt;br /&gt;"
+        yourInput=int(input("請輸入一個整數!"))  
+        #con1 &lt;="test"+html.BR()
+        output = yourInput + 1
+        con1 &lt;="你輸入的整數加上1之後,為"+str(output)
+except:
+     con1 &lt;="拜託請輸入整數!"
+'''
+def b1(e):
+    alert("")
+document["b1"].bind("click",b1)
+
+#coding: utf-8
+# 猜數字遊戲
 import random
 
-ans = random.randint(1, 100)
-
-a_in = int(input("輸入整數:"))
-guess = 1
-
-while ans != a_in:
-    if a_in &lt; ans:
-        a_in = int(input("too small"))
+標準答案 = random.randint(1, 100)
+你猜的數字 = int(input("請輸入您所猜的整數:"))
+猜測次數 = 1
+while 標準答案 != 你猜的數字:
+    if 標準答案 &lt; 你猜的數字:
+        print("太大了，再猜一次 :)加油")
     else:
-        a_in = int(input("too big"))
-    guess += 1
+        print("太小了，再猜一次 :)加油")
+    你猜的數字 = int(input("請輸入您所猜的整數:"))
+    猜測次數 += 1
 
-alert("恭喜答對 ,一共猜了" + (str(guess)) + "次")
-&lt;/script&gt;</summary><category term="每週練習"></category></entry><entry><title>W14 練習</title><link href="./w14-lian-xi.html" rel="alternate"></link><published>2016-12-12T14:35:00+08:00</published><updated>2016-12-12T14:35:00+08:00</updated><author><name>40523231</name></author><id>tag:,2016-12-12:./w14-lian-xi.html</id><summary type="html">&lt;p&gt;以下為第十四週開始的城市練習,要利用 &lt;a href="http://mde.tw/2016fallcp/course/Python3Programs.txt"&gt;http://mde.tw/2016fallcp/course/Python3Programs.txt&lt;/a&gt; 要整理Brython 的用法.
+print1("猜對了！總共猜了", 猜測次數, "次")
+con2 &lt;= print1("猜對了！總共猜了", 猜測次數, "次")
+
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id ="b1"&gt;玩猜數字遊戲&lt;/button&gt;&lt;/p&gt;</summary><category term="每週練習"></category></entry><entry><title>W15</title><link href="./w15.html" rel="alternate"></link><published>2016-12-19T14:35:00+08:00</published><updated>2016-12-19T14:35:00+08:00</updated><author><name>40523209</name></author><id>tag:,2016-12-19:./w15.html</id><summary type="html">&lt;h4&gt;W14影片重點&lt;/h4&gt;
+
+
+
+&lt;h1&gt;&lt;a href="https://vimeo.com/user24079973"style="color:red;"&gt;整理各週教學影片&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a href="https://vimeo.com/195916522"style="color:red;"&gt;cpa_W14-1&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;影片說明&lt;/h1&gt;
+&lt;p&gt;&lt;h4&gt;從 Leo Editor 的節點 @edit @path @button 的用法到 pelican 轉 .md 檔案成為 blog 網誌, 並加入 Brython 程式導入與執行的方法&lt;/h4&gt;&lt;/p&gt;
+&lt;OL TYPE=1&gt;
+&lt;h3&gt;
+&lt;LI&gt;@settings-&gt;設定節點
+
+&lt;LI&gt;@edit-&gt;增新節點  
+
+&lt;LI&gt;@path-&gt;儲存路徑
+
+&lt;LI&gt;@button-&gt;按鈕
+
+&lt;LI&gt;移動節點&lt;br/&gt;
+
+ctrl+u 向上移動&lt;br/&gt;
+
+ctrl+d 向下移動&lt;br/&gt;
+
+ctrl+r 向右移動&lt;br/&gt;
+
+ctrl+l 向左移動&lt;br/&gt;
+
+ctrl+i 新增內容&lt;br/&gt;
+
+ctrl+b 執行內容&lt;br/&gt;
+
+&lt;/h3&gt;
+&lt;img src="https://github.com/cow2166/9989/blob/master/%E6%93%B72%E5%8F%96.png?raw=true" alt="W15" title="W15" border="100" width=" 1000px" height="500px"&gt;&lt;/a&gt;
+
+
+&lt;HR color="#FFFF77" size="1" &gt;
+
+&lt;h1&gt;影片&lt;/h1&gt;
+
+&lt;iframe src="https://player.vimeo.com/video/195916522" width="640" height="491" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/195916522"&gt;cpa_w14-1&lt;/a&gt; from &lt;a href="https://vimeo.com/user24079973"&gt;虎尾科大機械設計工程&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+
+
+&lt;h1&gt;重複播放www.ytrepeat.com/影片號碼&lt;/h1&gt;
+
+&lt;img src="https://github.com/cow2166/9989/blob/master/990%E6%93%B7%E5%8F%96.PNG?raw=true" alt="W15" title="www.ytrepeat.com/" border="100" width=" 1000px" height="500px"&gt;&lt;/a&gt;</summary><category term="每週練習"></category></entry><entry><title>W14 練習</title><link href="./w14-lian-xi.html" rel="alternate"></link><published>2016-12-12T14:35:00+08:00</published><updated>2016-12-12T14:35:00+08:00</updated><author><name>40523209</name></author><id>tag:,2016-12-12:./w14-lian-xi.html</id><summary type="html">&lt;p&gt;以下為第十四週開始的城市練習,要利用 &lt;a href="http://mde.tw/2016fallcp/course/Python3Programs.txt"&gt;http://mde.tw/2016fallcp/course/Python3Programs.txt&lt;/a&gt; 要整理Brython 的用法.
 &lt;/p&gt;
 &lt;!-- 導入 Brython 標準程式庫 --&gt;
 
@@ -106,1569 +166,7 @@ mynum = input("要印幾次?")
 for i in range(int(mynum)):
     #container&lt;="W14練習-2"+html.BR()
     container&lt;=mystring+html.BR()
-&lt;/script&gt;</summary><category term="每週練習"></category></entry><entry><title>w13</title><link href="./w13.html" rel="alternate"></link><published>2016-12-11T12:00:00+08:00</published><updated>2016-12-11T12:00:00+08:00</updated><author><name>40523230</name></author><id>tag:,2016-12-11:./w13.html</id><summary type="html">&lt;p&gt;Brython 繪圖&lt;/p&gt;
-
-
-&lt;p&gt;繪圖流程, 導入程式庫, 啟動, 然後引用各種模組開始繪圖&lt;/p&gt;
-&lt;!-- 導入 Brython 標準程式庫 --&gt;
-
-&lt;script type="text/javascript" 
-    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
-&lt;/script&gt;
-
-&lt;!-- 啟動 Brython --&gt;
-
-&lt;script&gt;
-window.onload=function(){
-brython(1);
-}
-&lt;/script&gt;
-
-&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
-
-&lt;canvas id="chord1" width="600" height="400"&gt;&lt;/canvas&gt;
-
-&lt;script type="text/python3"&gt;
-from browser import document as doc
-import math
-# 準備繪圖畫布
-canvas = doc["chord1"]
-ctx = canvas.getContext("2d")
-
-'''
-# 改用 background 函式繪圖
-# 水平線
-for i in range(5):
-    ctx.beginPath()
-# 設定線的寬度為 1 個單位
-    if i == 0:
-        ctx.lineWidth = 7
-    else:
-        ctx.lineWidth = 1
-    ctx.moveTo(99, 100+i*30)
-    ctx.lineTo(201, 100+i*30)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    ctx.stroke()
-    ctx.closePath()
-
-# 垂直線
-for i in range(6):
-    ctx.beginPath()
-# 設定線的寬度為 1 個單位
-    ctx.lineWidth = 1
-    ctx.moveTo(100+i*20, 100)
-    ctx.lineTo(100+i*20, 220)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    ctx.stroke()
-    ctx.closePath()
-'''
-def canvasText(x, y, fontSize, string, sup, sub, color, ctx):
-    # 標定各弦音符號, 以及把位編號
-    ctx.beginPath()
-    ctx.fillStyle = color
-    ctx.strokeStyle = color
-    #ctx.font = "20px Arial"
-    ctx.font = str(fontSize)+ "px Arial"
-    ctx.fillText(string, x, y)
-    ctx.font = str(fontSize-8)+ "px Arial"
-    if sup != "":
-        ctx.fillText(sup, x+fontSize/1.6, y-fontSize/2)
-    if sub != "":
-        ctx.fillText(sup, x+fontSize/1.6, y)
-    ctx.fill()
-    ctx.stroke()
-    ctx.closePath()
-
-# 設法利用運算印出吉他各把位的音名
-def doreme(x, y, fontSize, order, ctx):
-    # EADGBE (guitar string)
-    # FgGaAbBCdDeE (C=Do, D=Re, E=Mi)
-    #簡譜 1 2 3 4 5 6 7 
-    #音名 C D E F G A B 
-    #唱名 Do Re Mi Fa Sol La Ti 
-
-    # 讓音名數列可以每 12 音名後, 升高 key 後從頭開始
-    if order &gt; 12:
-        order = order % 12
-
-    if order == 1:
-        canvasText(x, y, fontSize, "A", "", "", "black", ctx)
-    elif order ==2:
-        canvasText(x, y, fontSize, "B", "b", "", "red", ctx)
-    elif order == 3:
-        canvasText(x, y, fontSize, "B", "", "", "black", ctx)
-    elif order == 4:
-        canvasText(x, y, fontSize, "C", "", "", "black", ctx)
-    elif order == 5:
-        canvasText(x, y, fontSize, "D", "b", "", "red", ctx)
-    elif order == 6:
-        canvasText(x, y, fontSize, "D", "", "", "black", ctx)
-    elif order == 7:
-        canvasText(x, y, fontSize, "E", "b", "", "red", ctx)
-    elif order == 8:
-        canvasText(x, y, fontSize, "E", "", "", "black", ctx)
-    elif order == 9:
-        canvasText(x, y, fontSize, "F", "", "", "black", ctx)
-    elif order == 10:
-        canvasText(x, y, fontSize, "G", "b", "", "red", ctx)
-    elif order == 11:
-        canvasText(x, y, fontSize, "G", "", "", "black", ctx)
-    elif order == 12:
-        canvasText(x, y, fontSize, "A", "b", "", "red", ctx)
-    else:
-        canvasText(x, y, fontSize, "Error", "", "", "red", ctx)
-
-def background(x, y, xinc, yinc, xnum, ynum, ctx):
-    # 水平線
-    for i in range(ynum+1):
-        ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-        if i == 0:
-            ctx.lineWidth = 7
-        else:
-            ctx.lineWidth = 1
-        ctx.moveTo(x-1, y+i*yinc)
-        ctx.lineTo(x+xnum*xinc+1, y+i*yinc)
-        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-        ctx.strokeStyle = "blue"
-        ctx.stroke()
-        ctx.closePath()
-
-    # 垂直線
-    for i in range(xnum+1):
-        ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-        ctx.lineWidth = 1
-        ctx.moveTo(x+i*xinc, y)
-        ctx.lineTo(x+i*xinc, y+ynum*yinc)
-        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-        ctx.strokeStyle = "blue"
-        ctx.stroke()
-        ctx.closePath()
-    # 標定各弦音符號, 以及把位編號
-    ctx.beginPath()
-    ctx.fillStyle = 'black'
-    ctx.strokeStyle = "black"
-    ctx.font = "20px Arial"
-    sixString = ["E", "A", "D", "G", "B", "E"]
-    stringNum = 0
-    for i in sixString:
-        ctx.fillText(i, x-7+stringNum*xinc, y-30)
-        stringNum = stringNum + 1
-    ctx.fill()
-    ctx.stroke()
-    ctx.closePath()
-    # EADGBE (guitar string)
-    # FgGaAbBCdDeE (C=Do, D=Re, E=Mi)
-    canvasText(x, y-50, 20, "A", "", "", "black", ctx)
-    canvasText(x+xinc, y-50, 20, "B", "b", "", "red", ctx)
-    canvasText(x+xinc*2, y-50, 20, "B", "", "", "black", ctx)
-    canvasText(x+xinc*3, y-50, 20, "C", "", "", "black", ctx)
-    canvasText(x+xinc*4, y-50, 20, "D", "b", "", "red", ctx)
-    canvasText(x+xinc*5, y-50, 20, "D", "", "", "black", ctx)
-    canvasText(x+xinc*6, y-50, 20, "E", "b", "", "red", ctx)
-    canvasText(x+xinc*7, y-50, 20, "E", "", "", "black", ctx)
-    canvasText(x+xinc*8, y-50, 20, "F", "", "", "black", ctx)
-    canvasText(x+xinc*9, y-50, 20, "G", "b", "", "red", ctx)
-    canvasText(x+xinc*10, y-50, 20, "G", "", "", "black", ctx)
-    canvasText(x+xinc*11, y-50, 20, "A", "b", "", "red", ctx)
-    ####################################
-    # 以下利用數列運算, 從已知第1把位的音名分別推算各把位的音名
-    # 吉他初始音名次序 816(11)38
-    ####################################
-    firstBar = [8, 1, 6, 11, 3, 8]
-    # j 為往下增量
-    for j in range(4):
-        # k 為 往右把位初始值
-        fontSize = 15 
-        for k in range(6):
-            bx = x + (k)*w - fontSize/3
-            by = y + (j)*h+h/2 + fontSize/2
-            order = firstBar[k] + j + 1
-            doreme(bx, by, fontSize, order, ctx)
-
-w = 20
-h = 30
-# 將前面的水平線與垂直線繪圖改用 background 繪圖
-background(100, 100, w, h, 5, 4, ctx)
-&lt;/script&gt;
-
-&lt;!-- 導入 Brython 標準程式庫 --&gt;
-
-&lt;script type="text/javascript" 
-    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
-&lt;/script&gt;
-
-&lt;!-- 啟動 Brython --&gt;
-
-&lt;script&gt;
-window.onload=function(){
-brython(1);
-}
-&lt;/script&gt;
-
-&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
-
-&lt;canvas id="chord1" width="600" height="400"&gt;&lt;/canvas&gt;
-
-&lt;script type="text/python3"&gt;
-from browser import document as doc
-import math
-# 準備繪圖畫布
-canvas = doc["chord1"]
-ctx = canvas.getContext("2d")
-
-'''
-# 改用 background 函式繪圖
-# 水平線
-for i in range(5):
-    ctx.beginPath()
-# 設定線的寬度為 1 個單位
-    if i == 0:
-        ctx.lineWidth = 7
-    else:
-        ctx.lineWidth = 1
-    ctx.moveTo(99, 100+i*30)
-    ctx.lineTo(201, 100+i*30)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    ctx.stroke()
-    ctx.closePath()
-
-# 垂直線
-for i in range(6):
-    ctx.beginPath()
-# 設定線的寬度為 1 個單位
-    ctx.lineWidth = 1
-    ctx.moveTo(100+i*20, 100)
-    ctx.lineTo(100+i*20, 220)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    ctx.stroke()
-    ctx.closePath()
-'''
-def canvasText(x, y, fontSize, string, sup, sub, color, ctx):
-    # 標定各弦音符號, 以及把位編號
-    ctx.beginPath()
-    ctx.fillStyle = color
-    ctx.strokeStyle = color
-    #ctx.font = "20px Arial"
-    ctx.font = str(fontSize)+ "px Arial"
-    ctx.fillText(string, x, y)
-    ctx.font = str(fontSize-8)+ "px Arial"
-    if sup != "":
-        ctx.fillText(sup, x+fontSize/1.6, y-fontSize/2)
-    if sub != "":
-        ctx.fillText(sup, x+fontSize/1.6, y)
-    ctx.fill()
-    ctx.stroke()
-    ctx.closePath()
-
-# 設法利用運算印出吉他各把位的音名
-def doreme(x, y, fontSize, order, ctx):
-    # EADGBE (guitar string)
-    # FgGaAbBCdDeE (C=Do, D=Re, E=Mi)
-    #簡譜 1 2 3 4 5 6 7 
-    #音名 C D E F G A B 
-    #唱名 Do Re Mi Fa Sol La Ti 
-
-    # 讓音名數列可以每 12 音名後, 升高 key 後從頭開始
-    if order &gt; 12:
-        order = order % 12
-
-    if order == 1:
-        canvasText(x, y, fontSize, "A", "", "", "black", ctx)
-    elif order ==2:
-        canvasText(x, y, fontSize, "B", "b", "", "red", ctx)
-    elif order == 3:
-        canvasText(x, y, fontSize, "B", "", "", "black", ctx)
-    elif order == 4:
-        canvasText(x, y, fontSize, "C", "", "", "black", ctx)
-    elif order == 5:
-        canvasText(x, y, fontSize, "D", "b", "", "red", ctx)
-    elif order == 6:
-        canvasText(x, y, fontSize, "D", "", "", "black", ctx)
-    elif order == 7:
-        canvasText(x, y, fontSize, "E", "b", "", "red", ctx)
-    elif order == 8:
-        canvasText(x, y, fontSize, "E", "", "", "black", ctx)
-    elif order == 9:
-        canvasText(x, y, fontSize, "F", "", "", "black", ctx)
-    elif order == 10:
-        canvasText(x, y, fontSize, "G", "b", "", "red", ctx)
-    elif order == 11:
-        canvasText(x, y, fontSize, "G", "", "", "black", ctx)
-    elif order == 12:
-        canvasText(x, y, fontSize, "A", "b", "", "red", ctx)
-    else:
-        canvasText(x, y, fontSize, "Error", "", "", "red", ctx)
-
-def background(x, y, xinc, yinc, xnum, ynum, ctx):
-    # 水平線
-    for i in range(ynum+1):
-        ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-        if i == 0:
-            ctx.lineWidth = 7
-        else:
-            ctx.lineWidth = 1
-        ctx.moveTo(x-1, y+i*yinc)
-        ctx.lineTo(x+xnum*xinc+1, y+i*yinc)
-        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-        ctx.strokeStyle = "blue"
-        ctx.stroke()
-        ctx.closePath()
-
-    # 垂直線
-    for i in range(xnum+1):
-        ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-        ctx.lineWidth = 1
-        ctx.moveTo(x+i*xinc, y)
-        ctx.lineTo(x+i*xinc, y+ynum*yinc)
-        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-        ctx.strokeStyle = "blue"
-        ctx.stroke()
-        ctx.closePath()
-
-    ####################################
-    # 以下利用數列運算, 從已知第1把位的音名分別推算各把位的音名
-    # 吉他初始音名次序 816(11)38
-    ####################################
-    firstBar = [12, 5, 10, 4, 7, 12]
-    # j 為往下增量
-    for j in range(4):
-        # k 為 往右把位初始值
-        fontSize = 15 
-        for k in range(6):
-            bx = x + (k)*w - fontSize/3
-            by = y + (j)*h+h/2 + fontSize/2
-            order = firstBar[k] + j + 1
-            doreme(bx, by, fontSize, order, ctx)
-
-w = 20
-h = 30
-# 將前面的水平線與垂直線繪圖改用 background 繪圖
-background(250, 100, w, h, 5, 4, ctx)
-&lt;/script&gt;
-
-&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
-
-&lt;canvas id="chord1" width="600" height="400"&gt;&lt;/canvas&gt;
-
-&lt;script type="text/python3"&gt;
-from browser import document as doc
-import math
-# 準備繪圖畫布
-canvas = doc["chord1"]
-ctx = canvas.getContext("2d")
-
-'''
-# 改用 background 函式繪圖
-# 水平線
-for i in range(5):
-    ctx.beginPath()
-# 設定線的寬度為 1 個單位
-    if i == 0:
-        ctx.lineWidth = 7
-    else:
-        ctx.lineWidth = 1
-    ctx.moveTo(99, 100+i*30)
-    ctx.lineTo(201, 100+i*30)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    ctx.stroke()
-    ctx.closePath()
-
-# 垂直線
-for i in range(6):
-    ctx.beginPath()
-# 設定線的寬度為 1 個單位
-    ctx.lineWidth = 1
-    ctx.moveTo(100+i*20, 100)
-    ctx.lineTo(100+i*20, 220)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    ctx.stroke()
-    ctx.closePath()
-'''
-def canvasText(x, y, fontSize, string, sup, sub, color, ctx):
-    # 標定各弦音符號, 以及把位編號
-    ctx.beginPath()
-    ctx.fillStyle = color
-    ctx.strokeStyle = color
-    #ctx.font = "20px Arial"
-    ctx.font = str(fontSize)+ "px Arial"
-    ctx.fillText(string, x, y)
-    ctx.font = str(fontSize-8)+ "px Arial"
-    if sup != "":
-        ctx.fillText(sup, x+fontSize/1.6, y-fontSize/2)
-    if sub != "":
-        ctx.fillText(sup, x+fontSize/1.6, y)
-    ctx.fill()
-    ctx.stroke()
-    ctx.closePath()
-
-# 設法利用運算印出吉他各把位的音名
-def doreme(x, y, fontSize, order, ctx):
-    # EADGBE (guitar string)
-    # FgGaAbBCdDeE (C=Do, D=Re, E=Mi)
-    #簡譜 1 2 3 4 5 6 7 
-    #音名 C D E F G A B 
-    #唱名 Do Re Mi Fa Sol La Ti 
-
-    # 讓音名數列可以每 12 音名後, 升高 key 後從頭開始
-    if order &gt; 12:
-        order = order % 12
-
-    if order == 1:
-        canvasText(x, y, fontSize, "A", "", "", "black", ctx)
-    elif order ==2:
-        canvasText(x, y, fontSize, "B", "b", "", "red", ctx)
-    elif order == 3:
-        canvasText(x, y, fontSize, "B", "", "", "black", ctx)
-    elif order == 4:
-        canvasText(x, y, fontSize, "C", "", "", "black", ctx)
-    elif order == 5:
-        canvasText(x, y, fontSize, "D", "b", "", "red", ctx)
-    elif order == 6:
-        canvasText(x, y, fontSize, "D", "", "", "black", ctx)
-    elif order == 7:
-        canvasText(x, y, fontSize, "E", "b", "", "red", ctx)
-    elif order == 8:
-        canvasText(x, y, fontSize, "E", "", "", "black", ctx)
-    elif order == 9:
-        canvasText(x, y, fontSize, "F", "", "", "black", ctx)
-    elif order == 10:
-        canvasText(x, y, fontSize, "G", "b", "", "red", ctx)
-    elif order == 11:
-        canvasText(x, y, fontSize, "G", "", "", "black", ctx)
-    elif order == 12:
-        canvasText(x, y, fontSize, "A", "b", "", "red", ctx)
-    else:
-        canvasText(x, y, fontSize, "Error", "", "", "red", ctx)
-
-def background(x, y, xinc, yinc, xnum, ynum, ctx):
-    # 水平線
-    for i in range(ynum+1):
-        ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-        if i == 0:
-            ctx.lineWidth = 7
-        else:
-            ctx.lineWidth = 1
-        ctx.moveTo(x-1, y+i*yinc)
-        ctx.lineTo(x+xnum*xinc+1, y+i*yinc)
-        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-        ctx.strokeStyle = "blue"
-        ctx.stroke()
-        ctx.closePath()
-
-    # 垂直線
-    for i in range(xnum+1):
-        ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-        ctx.lineWidth = 1
-        ctx.moveTo(x+i*xinc, y)
-        ctx.lineTo(x+i*xinc, y+ynum*yinc)
-        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-        ctx.strokeStyle = "blue"
-        ctx.stroke()
-        ctx.closePath()
-
-    ####################################
-    # 以下利用數列運算, 從已知第1把位的音名分別推算各把位的音名
-    # 吉他初始音名次序 816(11)38
-    ####################################
-    firstBar = [4, 9, 14, 8, 11, 16]
-    # j 為往下增量
-    for j in range(4):
-        # k 為 往右把位初始值
-        fontSize = 15 
-        for k in range(6):
-            bx = x + (k)*w - fontSize/3
-            by = y + (j)*h+h/2 + fontSize/2
-            order = firstBar[k] + j + 1
-            doreme(bx, by, fontSize, order, ctx)
-
-w = 20
-h = 30
-# 將前面的水平線與垂直線繪圖改用 background 繪圖
-background(400, 100, w, h, 5, 4, ctx)
-&lt;/script&gt;
-
-&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
-
-&lt;canvas id="chord1" width="600" height="400"&gt;&lt;/canvas&gt;
-
-&lt;script type="text/python3"&gt;
-from browser import document as doc
-import math
-# 準備繪圖畫布
-canvas = doc["chord1"]
-ctx = canvas.getContext("2d")
-
-'''
-# 改用 background 函式繪圖
-# 水平線
-for i in range(5):
-    ctx.beginPath()
-# 設定線的寬度為 1 個單位
-    if i == 0:
-        ctx.lineWidth = 7
-    else:
-        ctx.lineWidth = 1
-    ctx.moveTo(99, 100+i*30)
-    ctx.lineTo(201, 100+i*30)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    ctx.stroke()
-    ctx.closePath()
-
-# 垂直線
-for i in range(6):
-    ctx.beginPath()
-# 設定線的寬度為 1 個單位
-    ctx.lineWidth = 1
-    ctx.moveTo(100+i*20, 100)
-    ctx.lineTo(100+i*20, 220)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    ctx.stroke()
-    ctx.closePath()
-'''
-def canvasText(x, y, fontSize, string, sup, sub, color, ctx):
-    # 標定各弦音符號, 以及把位編號
-    ctx.beginPath()
-    ctx.fillStyle = color
-    ctx.strokeStyle = color
-    #ctx.font = "20px Arial"
-    ctx.font = str(fontSize)+ "px Arial"
-    ctx.fillText(string, x, y)
-    ctx.font = str(fontSize-8)+ "px Arial"
-    if sup != "":
-        ctx.fillText(sup, x+fontSize/1.6, y-fontSize/2)
-    if sub != "":
-        ctx.fillText(sup, x+fontSize/1.6, y)
-    ctx.fill()
-    ctx.stroke()
-    ctx.closePath()
-
-# 設法利用運算印出吉他各把位的音名
-def doreme(x, y, fontSize, order, ctx):
-    # EADGBE (guitar string)
-    # FgGaAbBCdDeE (C=Do, D=Re, E=Mi)
-    #簡譜 1 2 3 4 5 6 7 
-    #音名 C D E F G A B 
-    #唱名 Do Re Mi Fa Sol La Ti 
-
-    # 讓音名數列可以每 12 音名後, 升高 key 後從頭開始
-    if order &gt; 12:
-        order = order % 12
-
-    if order == 1:
-        canvasText(x, y, fontSize, "A", "", "", "black", ctx)
-    elif order ==2:
-        canvasText(x, y, fontSize, "B", "b", "", "red", ctx)
-    elif order == 3:
-        canvasText(x, y, fontSize, "B", "", "", "black", ctx)
-    elif order == 4:
-        canvasText(x, y, fontSize, "C", "", "", "black", ctx)
-    elif order == 5:
-        canvasText(x, y, fontSize, "D", "b", "", "red", ctx)
-    elif order == 6:
-        canvasText(x, y, fontSize, "D", "", "", "black", ctx)
-    elif order == 7:
-        canvasText(x, y, fontSize, "E", "b", "", "red", ctx)
-    elif order == 8:
-        canvasText(x, y, fontSize, "E", "", "", "black", ctx)
-    elif order == 9:
-        canvasText(x, y, fontSize, "F", "", "", "black", ctx)
-    elif order == 10:
-        canvasText(x, y, fontSize, "G", "b", "", "red", ctx)
-    elif order == 11:
-        canvasText(x, y, fontSize, "G", "", "", "black", ctx)
-    elif order == 12:
-        canvasText(x, y, fontSize, "A", "b", "", "red", ctx)
-    else:
-        canvasText(x, y, fontSize, "Error", "", "", "red", ctx)
-
-def background(x, y, xinc, yinc, xnum, ynum, ctx):
-    # 水平線
-    for i in range(ynum+1):
-        ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-        if i == 0:
-            ctx.lineWidth = 7
-        else:
-            ctx.lineWidth = 1
-        ctx.moveTo(x-1, y+i*yinc)
-        ctx.lineTo(x+xnum*xinc+1, y+i*yinc)
-        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-        ctx.strokeStyle = "blue"
-        ctx.stroke()
-        ctx.closePath()
-
-    # 垂直線
-    for i in range(xnum+1):
-        ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-        ctx.lineWidth = 1
-        ctx.moveTo(x+i*xinc, y)
-        ctx.lineTo(x+i*xinc, y+ynum*yinc)
-        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-        ctx.strokeStyle = "blue"
-        ctx.stroke()
-        ctx.closePath()
-
-    ####################################
-    # 以下利用數列運算, 從已知第1把位的音名分別推算各把位的音名
-    # 吉他初始音名次序 816(11)38
-    ####################################
-    firstBar = [8, 13, 6, 12, 3, 8]
-    # j 為往下增量
-    for j in range(4):
-        # k 為 往右把位初始值
-        fontSize = 15 
-        for k in range(6):
-            bx = x + (k)*w - fontSize/3
-            by = y + (j)*h+h/2 + fontSize/2
-            order = firstBar[k] + j + 1
-            doreme(bx, by, fontSize, order, ctx)
-
-w = 20
-h = 30
-# 將前面的水平線與垂直線繪圖改用 background 繪圖
-background(100, 250, w, h, 5, 4, ctx)
-&lt;/script&gt;
-
-&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
-
-&lt;canvas id="chord1" width="600" height="400"&gt;&lt;/canvas&gt;
-
-&lt;script type="text/python3"&gt;
-from browser import document as doc
-import math
-# 準備繪圖畫布
-canvas = doc["chord1"]
-ctx = canvas.getContext("2d")
-
-'''
-# 改用 background 函式繪圖
-# 水平線
-for i in range(5):
-    ctx.beginPath()
-# 設定線的寬度為 1 個單位
-    if i == 0:
-        ctx.lineWidth = 7
-    else:
-        ctx.lineWidth = 1
-    ctx.moveTo(99, 100+i*30)
-    ctx.lineTo(201, 100+i*30)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    ctx.stroke()
-    ctx.closePath()
-
-# 垂直線
-for i in range(6):
-    ctx.beginPath()
-# 設定線的寬度為 1 個單位
-    ctx.lineWidth = 1
-    ctx.moveTo(100+i*20, 100)
-    ctx.lineTo(100+i*20, 220)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    ctx.stroke()
-    ctx.closePath()
-'''
-def canvasText(x, y, fontSize, string, sup, sub, color, ctx):
-    # 標定各弦音符號, 以及把位編號
-    ctx.beginPath()
-    ctx.fillStyle = color
-    ctx.strokeStyle = color
-    #ctx.font = "20px Arial"
-    ctx.font = str(fontSize)+ "px Arial"
-    ctx.fillText(string, x, y)
-    ctx.font = str(fontSize-8)+ "px Arial"
-    if sup != "":
-        ctx.fillText(sup, x+fontSize/1.6, y-fontSize/2)
-    if sub != "":
-        ctx.fillText(sup, x+fontSize/1.6, y)
-    ctx.fill()
-    ctx.stroke()
-    ctx.closePath()
-
-# 設法利用運算印出吉他各把位的音名
-def doreme(x, y, fontSize, order, ctx):
-    # EADGBE (guitar string)
-    # FgGaAbBCdDeE (C=Do, D=Re, E=Mi)
-    #簡譜 1 2 3 4 5 6 7 
-    #音名 C D E F G A B 
-    #唱名 Do Re Mi Fa Sol La Ti 
-
-    # 讓音名數列可以每 12 音名後, 升高 key 後從頭開始
-    if order &gt; 12:
-        order = order % 12
-
-    if order == 1:
-        canvasText(x, y, fontSize, "A", "", "", "black", ctx)
-    elif order ==2:
-        canvasText(x, y, fontSize, "B", "b", "", "red", ctx)
-    elif order == 3:
-        canvasText(x, y, fontSize, "B", "", "", "black", ctx)
-    elif order == 4:
-        canvasText(x, y, fontSize, "C", "", "", "black", ctx)
-    elif order == 5:
-        canvasText(x, y, fontSize, "D", "b", "", "red", ctx)
-    elif order == 6:
-        canvasText(x, y, fontSize, "D", "", "", "black", ctx)
-    elif order == 7:
-        canvasText(x, y, fontSize, "E", "b", "", "red", ctx)
-    elif order == 8:
-        canvasText(x, y, fontSize, "E", "", "", "black", ctx)
-    elif order == 9:
-        canvasText(x, y, fontSize, "F", "", "", "black", ctx)
-    elif order == 10:
-        canvasText(x, y, fontSize, "G", "b", "", "red", ctx)
-    elif order == 11:
-        canvasText(x, y, fontSize, "G", "", "", "black", ctx)
-    elif order == 12:
-        canvasText(x, y, fontSize, "A", "b", "", "red", ctx)
-    else:
-        canvasText(x, y, fontSize, "Error", "", "", "red", ctx)
-
-def background(x, y, xinc, yinc, xnum, ynum, ctx):
-    # 水平線
-    for i in range(ynum+1):
-        ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-        if i == 0:
-            ctx.lineWidth = 7
-        else:
-            ctx.lineWidth = 1
-        ctx.moveTo(x-1, y+i*yinc)
-        ctx.lineTo(x+xnum*xinc+1, y+i*yinc)
-        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-        ctx.strokeStyle = "blue"
-        ctx.stroke()
-        ctx.closePath()
-
-    # 垂直線
-    for i in range(xnum+1):
-        ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-        ctx.lineWidth = 1
-        ctx.moveTo(x+i*xinc, y)
-        ctx.lineTo(x+i*xinc, y+ynum*yinc)
-        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-        ctx.strokeStyle = "blue"
-        ctx.stroke()
-        ctx.closePath()
-
-    ####################################
-    # 以下利用數列運算, 從已知第1把位的音名分別推算各把位的音名
-    # 吉他初始音名次序 816(11)38
-    ####################################
-    firstBar = [12, 5, 11, 4, 7, 12]
-    # j 為往下增量
-    for j in range(3):
-        # k 為 往右把位初始值
-        fontSize = 15 
-        for k in range(6):
-            bx = x + (k)*w - fontSize/3
-            by = y + (j)*h+h/2 + fontSize/2
-            order = firstBar[k] + j + 1
-            doreme(bx, by, fontSize, order, ctx)
-
-w = 20
-h = 30
-# 將前面的水平線與垂直線繪圖改用 background 繪圖
-background(250, 250, w, h, 5, 3, ctx)
-&lt;/script&gt;</summary><category term="Brython"></category></entry><entry><title>w13</title><link href="./w13.html" rel="alternate"></link><published>2016-12-11T12:00:00+08:00</published><updated>2016-12-11T12:00:00+08:00</updated><author><name>40523230</name></author><id>tag:,2016-12-11:./w13.html</id><summary type="html">&lt;p&gt;Brython 繪圖&lt;/p&gt;
-
-
-&lt;p&gt;繪圖流程, 導入程式庫, 啟動, 然後引用各種模組開始繪圖&lt;/p&gt;
-&lt;!-- 導入 Brython 標準程式庫 --&gt;
-
-&lt;script type="text/javascript" 
-    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
-&lt;/script&gt;
-
-&lt;!-- 啟動 Brython --&gt;
-
-&lt;script&gt;
-window.onload=function(){
-brython(1);
-}
-&lt;/script&gt;
-
-&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
-
-&lt;canvas id="chord1" width="600" height="400"&gt;&lt;/canvas&gt;
-
-&lt;script type="text/python3"&gt;
-from browser import document as doc
-import math
-# 準備繪圖畫布
-canvas = doc["chord1"]
-ctx = canvas.getContext("2d")
-
-'''
-# 改用 background 函式繪圖
-# 水平線
-for i in range(5):
-    ctx.beginPath()
-# 設定線的寬度為 1 個單位
-    if i == 0:
-        ctx.lineWidth = 7
-    else:
-        ctx.lineWidth = 1
-    ctx.moveTo(99, 100+i*30)
-    ctx.lineTo(201, 100+i*30)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    ctx.stroke()
-    ctx.closePath()
-
-# 垂直線
-for i in range(6):
-    ctx.beginPath()
-# 設定線的寬度為 1 個單位
-    ctx.lineWidth = 1
-    ctx.moveTo(100+i*20, 100)
-    ctx.lineTo(100+i*20, 220)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    ctx.stroke()
-    ctx.closePath()
-'''
-def canvasText(x, y, fontSize, string, sup, sub, color, ctx):
-    # 標定各弦音符號, 以及把位編號
-    ctx.beginPath()
-    ctx.fillStyle = color
-    ctx.strokeStyle = color
-    #ctx.font = "20px Arial"
-    ctx.font = str(fontSize)+ "px Arial"
-    ctx.fillText(string, x, y)
-    ctx.font = str(fontSize-8)+ "px Arial"
-    if sup != "":
-        ctx.fillText(sup, x+fontSize/1.6, y-fontSize/2)
-    if sub != "":
-        ctx.fillText(sup, x+fontSize/1.6, y)
-    ctx.fill()
-    ctx.stroke()
-    ctx.closePath()
-
-# 設法利用運算印出吉他各把位的音名
-def doreme(x, y, fontSize, order, ctx):
-    # EADGBE (guitar string)
-    # FgGaAbBCdDeE (C=Do, D=Re, E=Mi)
-    #簡譜 1 2 3 4 5 6 7 
-    #音名 C D E F G A B 
-    #唱名 Do Re Mi Fa Sol La Ti 
-
-    # 讓音名數列可以每 12 音名後, 升高 key 後從頭開始
-    if order &gt; 12:
-        order = order % 12
-
-    if order == 1:
-        canvasText(x, y, fontSize, "A", "", "", "black", ctx)
-    elif order ==2:
-        canvasText(x, y, fontSize, "B", "b", "", "red", ctx)
-    elif order == 3:
-        canvasText(x, y, fontSize, "B", "", "", "black", ctx)
-    elif order == 4:
-        canvasText(x, y, fontSize, "C", "", "", "black", ctx)
-    elif order == 5:
-        canvasText(x, y, fontSize, "D", "b", "", "red", ctx)
-    elif order == 6:
-        canvasText(x, y, fontSize, "D", "", "", "black", ctx)
-    elif order == 7:
-        canvasText(x, y, fontSize, "E", "b", "", "red", ctx)
-    elif order == 8:
-        canvasText(x, y, fontSize, "E", "", "", "black", ctx)
-    elif order == 9:
-        canvasText(x, y, fontSize, "F", "", "", "black", ctx)
-    elif order == 10:
-        canvasText(x, y, fontSize, "G", "b", "", "red", ctx)
-    elif order == 11:
-        canvasText(x, y, fontSize, "G", "", "", "black", ctx)
-    elif order == 12:
-        canvasText(x, y, fontSize, "A", "b", "", "red", ctx)
-    else:
-        canvasText(x, y, fontSize, "Error", "", "", "red", ctx)
-
-def background(x, y, xinc, yinc, xnum, ynum, ctx):
-    # 水平線
-    for i in range(ynum+1):
-        ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-        if i == 0:
-            ctx.lineWidth = 7
-        else:
-            ctx.lineWidth = 1
-        ctx.moveTo(x-1, y+i*yinc)
-        ctx.lineTo(x+xnum*xinc+1, y+i*yinc)
-        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-        ctx.strokeStyle = "blue"
-        ctx.stroke()
-        ctx.closePath()
-
-    # 垂直線
-    for i in range(xnum+1):
-        ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-        ctx.lineWidth = 1
-        ctx.moveTo(x+i*xinc, y)
-        ctx.lineTo(x+i*xinc, y+ynum*yinc)
-        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-        ctx.strokeStyle = "blue"
-        ctx.stroke()
-        ctx.closePath()
-    # 標定各弦音符號, 以及把位編號
-    ctx.beginPath()
-    ctx.fillStyle = 'black'
-    ctx.strokeStyle = "black"
-    ctx.font = "20px Arial"
-    sixString = ["E", "A", "D", "G", "B", "E"]
-    stringNum = 0
-    for i in sixString:
-        ctx.fillText(i, x-7+stringNum*xinc, y-30)
-        stringNum = stringNum + 1
-    ctx.fill()
-    ctx.stroke()
-    ctx.closePath()
-    # EADGBE (guitar string)
-    # FgGaAbBCdDeE (C=Do, D=Re, E=Mi)
-    canvasText(x, y-50, 20, "A", "", "", "black", ctx)
-    canvasText(x+xinc, y-50, 20, "B", "b", "", "red", ctx)
-    canvasText(x+xinc*2, y-50, 20, "B", "", "", "black", ctx)
-    canvasText(x+xinc*3, y-50, 20, "C", "", "", "black", ctx)
-    canvasText(x+xinc*4, y-50, 20, "D", "b", "", "red", ctx)
-    canvasText(x+xinc*5, y-50, 20, "D", "", "", "black", ctx)
-    canvasText(x+xinc*6, y-50, 20, "E", "b", "", "red", ctx)
-    canvasText(x+xinc*7, y-50, 20, "E", "", "", "black", ctx)
-    canvasText(x+xinc*8, y-50, 20, "F", "", "", "black", ctx)
-    canvasText(x+xinc*9, y-50, 20, "G", "b", "", "red", ctx)
-    canvasText(x+xinc*10, y-50, 20, "G", "", "", "black", ctx)
-    canvasText(x+xinc*11, y-50, 20, "A", "b", "", "red", ctx)
-    ####################################
-    # 以下利用數列運算, 從已知第1把位的音名分別推算各把位的音名
-    # 吉他初始音名次序 816(11)38
-    ####################################
-    firstBar = [8, 1, 6, 11, 3, 8]
-    # j 為往下增量
-    for j in range(4):
-        # k 為 往右把位初始值
-        fontSize = 15 
-        for k in range(6):
-            bx = x + (k)*w - fontSize/3
-            by = y + (j)*h+h/2 + fontSize/2
-            order = firstBar[k] + j + 1
-            doreme(bx, by, fontSize, order, ctx)
-
-w = 20
-h = 30
-# 將前面的水平線與垂直線繪圖改用 background 繪圖
-background(100, 100, w, h, 5, 4, ctx)
-&lt;/script&gt;
-
-&lt;!-- 導入 Brython 標準程式庫 --&gt;
-
-&lt;script type="text/javascript" 
-    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
-&lt;/script&gt;
-
-&lt;!-- 啟動 Brython --&gt;
-
-&lt;script&gt;
-window.onload=function(){
-brython(1);
-}
-&lt;/script&gt;
-
-&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
-
-&lt;canvas id="chord1" width="600" height="400"&gt;&lt;/canvas&gt;
-
-&lt;script type="text/python3"&gt;
-from browser import document as doc
-import math
-# 準備繪圖畫布
-canvas = doc["chord1"]
-ctx = canvas.getContext("2d")
-
-'''
-# 改用 background 函式繪圖
-# 水平線
-for i in range(5):
-    ctx.beginPath()
-# 設定線的寬度為 1 個單位
-    if i == 0:
-        ctx.lineWidth = 7
-    else:
-        ctx.lineWidth = 1
-    ctx.moveTo(99, 100+i*30)
-    ctx.lineTo(201, 100+i*30)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    ctx.stroke()
-    ctx.closePath()
-
-# 垂直線
-for i in range(6):
-    ctx.beginPath()
-# 設定線的寬度為 1 個單位
-    ctx.lineWidth = 1
-    ctx.moveTo(100+i*20, 100)
-    ctx.lineTo(100+i*20, 220)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    ctx.stroke()
-    ctx.closePath()
-'''
-def canvasText(x, y, fontSize, string, sup, sub, color, ctx):
-    # 標定各弦音符號, 以及把位編號
-    ctx.beginPath()
-    ctx.fillStyle = color
-    ctx.strokeStyle = color
-    #ctx.font = "20px Arial"
-    ctx.font = str(fontSize)+ "px Arial"
-    ctx.fillText(string, x, y)
-    ctx.font = str(fontSize-8)+ "px Arial"
-    if sup != "":
-        ctx.fillText(sup, x+fontSize/1.6, y-fontSize/2)
-    if sub != "":
-        ctx.fillText(sup, x+fontSize/1.6, y)
-    ctx.fill()
-    ctx.stroke()
-    ctx.closePath()
-
-# 設法利用運算印出吉他各把位的音名
-def doreme(x, y, fontSize, order, ctx):
-    # EADGBE (guitar string)
-    # FgGaAbBCdDeE (C=Do, D=Re, E=Mi)
-    #簡譜 1 2 3 4 5 6 7 
-    #音名 C D E F G A B 
-    #唱名 Do Re Mi Fa Sol La Ti 
-
-    # 讓音名數列可以每 12 音名後, 升高 key 後從頭開始
-    if order &gt; 12:
-        order = order % 12
-
-    if order == 1:
-        canvasText(x, y, fontSize, "A", "", "", "black", ctx)
-    elif order ==2:
-        canvasText(x, y, fontSize, "B", "b", "", "red", ctx)
-    elif order == 3:
-        canvasText(x, y, fontSize, "B", "", "", "black", ctx)
-    elif order == 4:
-        canvasText(x, y, fontSize, "C", "", "", "black", ctx)
-    elif order == 5:
-        canvasText(x, y, fontSize, "D", "b", "", "red", ctx)
-    elif order == 6:
-        canvasText(x, y, fontSize, "D", "", "", "black", ctx)
-    elif order == 7:
-        canvasText(x, y, fontSize, "E", "b", "", "red", ctx)
-    elif order == 8:
-        canvasText(x, y, fontSize, "E", "", "", "black", ctx)
-    elif order == 9:
-        canvasText(x, y, fontSize, "F", "", "", "black", ctx)
-    elif order == 10:
-        canvasText(x, y, fontSize, "G", "b", "", "red", ctx)
-    elif order == 11:
-        canvasText(x, y, fontSize, "G", "", "", "black", ctx)
-    elif order == 12:
-        canvasText(x, y, fontSize, "A", "b", "", "red", ctx)
-    else:
-        canvasText(x, y, fontSize, "Error", "", "", "red", ctx)
-
-def background(x, y, xinc, yinc, xnum, ynum, ctx):
-    # 水平線
-    for i in range(ynum+1):
-        ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-        if i == 0:
-            ctx.lineWidth = 7
-        else:
-            ctx.lineWidth = 1
-        ctx.moveTo(x-1, y+i*yinc)
-        ctx.lineTo(x+xnum*xinc+1, y+i*yinc)
-        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-        ctx.strokeStyle = "blue"
-        ctx.stroke()
-        ctx.closePath()
-
-    # 垂直線
-    for i in range(xnum+1):
-        ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-        ctx.lineWidth = 1
-        ctx.moveTo(x+i*xinc, y)
-        ctx.lineTo(x+i*xinc, y+ynum*yinc)
-        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-        ctx.strokeStyle = "blue"
-        ctx.stroke()
-        ctx.closePath()
-
-    ####################################
-    # 以下利用數列運算, 從已知第1把位的音名分別推算各把位的音名
-    # 吉他初始音名次序 816(11)38
-    ####################################
-    firstBar = [12, 5, 10, 4, 7, 12]
-    # j 為往下增量
-    for j in range(4):
-        # k 為 往右把位初始值
-        fontSize = 15 
-        for k in range(6):
-            bx = x + (k)*w - fontSize/3
-            by = y + (j)*h+h/2 + fontSize/2
-            order = firstBar[k] + j + 1
-            doreme(bx, by, fontSize, order, ctx)
-
-w = 20
-h = 30
-# 將前面的水平線與垂直線繪圖改用 background 繪圖
-background(250, 100, w, h, 5, 4, ctx)
-&lt;/script&gt;
-
-&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
-
-&lt;canvas id="chord1" width="600" height="400"&gt;&lt;/canvas&gt;
-
-&lt;script type="text/python3"&gt;
-from browser import document as doc
-import math
-# 準備繪圖畫布
-canvas = doc["chord1"]
-ctx = canvas.getContext("2d")
-
-'''
-# 改用 background 函式繪圖
-# 水平線
-for i in range(5):
-    ctx.beginPath()
-# 設定線的寬度為 1 個單位
-    if i == 0:
-        ctx.lineWidth = 7
-    else:
-        ctx.lineWidth = 1
-    ctx.moveTo(99, 100+i*30)
-    ctx.lineTo(201, 100+i*30)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    ctx.stroke()
-    ctx.closePath()
-
-# 垂直線
-for i in range(6):
-    ctx.beginPath()
-# 設定線的寬度為 1 個單位
-    ctx.lineWidth = 1
-    ctx.moveTo(100+i*20, 100)
-    ctx.lineTo(100+i*20, 220)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    ctx.stroke()
-    ctx.closePath()
-'''
-def canvasText(x, y, fontSize, string, sup, sub, color, ctx):
-    # 標定各弦音符號, 以及把位編號
-    ctx.beginPath()
-    ctx.fillStyle = color
-    ctx.strokeStyle = color
-    #ctx.font = "20px Arial"
-    ctx.font = str(fontSize)+ "px Arial"
-    ctx.fillText(string, x, y)
-    ctx.font = str(fontSize-8)+ "px Arial"
-    if sup != "":
-        ctx.fillText(sup, x+fontSize/1.6, y-fontSize/2)
-    if sub != "":
-        ctx.fillText(sup, x+fontSize/1.6, y)
-    ctx.fill()
-    ctx.stroke()
-    ctx.closePath()
-
-# 設法利用運算印出吉他各把位的音名
-def doreme(x, y, fontSize, order, ctx):
-    # EADGBE (guitar string)
-    # FgGaAbBCdDeE (C=Do, D=Re, E=Mi)
-    #簡譜 1 2 3 4 5 6 7 
-    #音名 C D E F G A B 
-    #唱名 Do Re Mi Fa Sol La Ti 
-
-    # 讓音名數列可以每 12 音名後, 升高 key 後從頭開始
-    if order &gt; 12:
-        order = order % 12
-
-    if order == 1:
-        canvasText(x, y, fontSize, "A", "", "", "black", ctx)
-    elif order ==2:
-        canvasText(x, y, fontSize, "B", "b", "", "red", ctx)
-    elif order == 3:
-        canvasText(x, y, fontSize, "B", "", "", "black", ctx)
-    elif order == 4:
-        canvasText(x, y, fontSize, "C", "", "", "black", ctx)
-    elif order == 5:
-        canvasText(x, y, fontSize, "D", "b", "", "red", ctx)
-    elif order == 6:
-        canvasText(x, y, fontSize, "D", "", "", "black", ctx)
-    elif order == 7:
-        canvasText(x, y, fontSize, "E", "b", "", "red", ctx)
-    elif order == 8:
-        canvasText(x, y, fontSize, "E", "", "", "black", ctx)
-    elif order == 9:
-        canvasText(x, y, fontSize, "F", "", "", "black", ctx)
-    elif order == 10:
-        canvasText(x, y, fontSize, "G", "b", "", "red", ctx)
-    elif order == 11:
-        canvasText(x, y, fontSize, "G", "", "", "black", ctx)
-    elif order == 12:
-        canvasText(x, y, fontSize, "A", "b", "", "red", ctx)
-    else:
-        canvasText(x, y, fontSize, "Error", "", "", "red", ctx)
-
-def background(x, y, xinc, yinc, xnum, ynum, ctx):
-    # 水平線
-    for i in range(ynum+1):
-        ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-        if i == 0:
-            ctx.lineWidth = 7
-        else:
-            ctx.lineWidth = 1
-        ctx.moveTo(x-1, y+i*yinc)
-        ctx.lineTo(x+xnum*xinc+1, y+i*yinc)
-        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-        ctx.strokeStyle = "blue"
-        ctx.stroke()
-        ctx.closePath()
-
-    # 垂直線
-    for i in range(xnum+1):
-        ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-        ctx.lineWidth = 1
-        ctx.moveTo(x+i*xinc, y)
-        ctx.lineTo(x+i*xinc, y+ynum*yinc)
-        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-        ctx.strokeStyle = "blue"
-        ctx.stroke()
-        ctx.closePath()
-
-    ####################################
-    # 以下利用數列運算, 從已知第1把位的音名分別推算各把位的音名
-    # 吉他初始音名次序 816(11)38
-    ####################################
-    firstBar = [4, 9, 14, 8, 11, 16]
-    # j 為往下增量
-    for j in range(4):
-        # k 為 往右把位初始值
-        fontSize = 15 
-        for k in range(6):
-            bx = x + (k)*w - fontSize/3
-            by = y + (j)*h+h/2 + fontSize/2
-            order = firstBar[k] + j + 1
-            doreme(bx, by, fontSize, order, ctx)
-
-w = 20
-h = 30
-# 將前面的水平線與垂直線繪圖改用 background 繪圖
-background(400, 100, w, h, 5, 4, ctx)
-&lt;/script&gt;
-
-&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
-
-&lt;canvas id="chord1" width="600" height="400"&gt;&lt;/canvas&gt;
-
-&lt;script type="text/python3"&gt;
-from browser import document as doc
-import math
-# 準備繪圖畫布
-canvas = doc["chord1"]
-ctx = canvas.getContext("2d")
-
-'''
-# 改用 background 函式繪圖
-# 水平線
-for i in range(5):
-    ctx.beginPath()
-# 設定線的寬度為 1 個單位
-    if i == 0:
-        ctx.lineWidth = 7
-    else:
-        ctx.lineWidth = 1
-    ctx.moveTo(99, 100+i*30)
-    ctx.lineTo(201, 100+i*30)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    ctx.stroke()
-    ctx.closePath()
-
-# 垂直線
-for i in range(6):
-    ctx.beginPath()
-# 設定線的寬度為 1 個單位
-    ctx.lineWidth = 1
-    ctx.moveTo(100+i*20, 100)
-    ctx.lineTo(100+i*20, 220)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    ctx.stroke()
-    ctx.closePath()
-'''
-def canvasText(x, y, fontSize, string, sup, sub, color, ctx):
-    # 標定各弦音符號, 以及把位編號
-    ctx.beginPath()
-    ctx.fillStyle = color
-    ctx.strokeStyle = color
-    #ctx.font = "20px Arial"
-    ctx.font = str(fontSize)+ "px Arial"
-    ctx.fillText(string, x, y)
-    ctx.font = str(fontSize-8)+ "px Arial"
-    if sup != "":
-        ctx.fillText(sup, x+fontSize/1.6, y-fontSize/2)
-    if sub != "":
-        ctx.fillText(sup, x+fontSize/1.6, y)
-    ctx.fill()
-    ctx.stroke()
-    ctx.closePath()
-
-# 設法利用運算印出吉他各把位的音名
-def doreme(x, y, fontSize, order, ctx):
-    # EADGBE (guitar string)
-    # FgGaAbBCdDeE (C=Do, D=Re, E=Mi)
-    #簡譜 1 2 3 4 5 6 7 
-    #音名 C D E F G A B 
-    #唱名 Do Re Mi Fa Sol La Ti 
-
-    # 讓音名數列可以每 12 音名後, 升高 key 後從頭開始
-    if order &gt; 12:
-        order = order % 12
-
-    if order == 1:
-        canvasText(x, y, fontSize, "A", "", "", "black", ctx)
-    elif order ==2:
-        canvasText(x, y, fontSize, "B", "b", "", "red", ctx)
-    elif order == 3:
-        canvasText(x, y, fontSize, "B", "", "", "black", ctx)
-    elif order == 4:
-        canvasText(x, y, fontSize, "C", "", "", "black", ctx)
-    elif order == 5:
-        canvasText(x, y, fontSize, "D", "b", "", "red", ctx)
-    elif order == 6:
-        canvasText(x, y, fontSize, "D", "", "", "black", ctx)
-    elif order == 7:
-        canvasText(x, y, fontSize, "E", "b", "", "red", ctx)
-    elif order == 8:
-        canvasText(x, y, fontSize, "E", "", "", "black", ctx)
-    elif order == 9:
-        canvasText(x, y, fontSize, "F", "", "", "black", ctx)
-    elif order == 10:
-        canvasText(x, y, fontSize, "G", "b", "", "red", ctx)
-    elif order == 11:
-        canvasText(x, y, fontSize, "G", "", "", "black", ctx)
-    elif order == 12:
-        canvasText(x, y, fontSize, "A", "b", "", "red", ctx)
-    else:
-        canvasText(x, y, fontSize, "Error", "", "", "red", ctx)
-
-def background(x, y, xinc, yinc, xnum, ynum, ctx):
-    # 水平線
-    for i in range(ynum+1):
-        ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-        if i == 0:
-            ctx.lineWidth = 7
-        else:
-            ctx.lineWidth = 1
-        ctx.moveTo(x-1, y+i*yinc)
-        ctx.lineTo(x+xnum*xinc+1, y+i*yinc)
-        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-        ctx.strokeStyle = "blue"
-        ctx.stroke()
-        ctx.closePath()
-
-    # 垂直線
-    for i in range(xnum+1):
-        ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-        ctx.lineWidth = 1
-        ctx.moveTo(x+i*xinc, y)
-        ctx.lineTo(x+i*xinc, y+ynum*yinc)
-        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-        ctx.strokeStyle = "blue"
-        ctx.stroke()
-        ctx.closePath()
-
-    ####################################
-    # 以下利用數列運算, 從已知第1把位的音名分別推算各把位的音名
-    # 吉他初始音名次序 816(11)38
-    ####################################
-    firstBar = [8, 13, 6, 12, 3, 8]
-    # j 為往下增量
-    for j in range(4):
-        # k 為 往右把位初始值
-        fontSize = 15 
-        for k in range(6):
-            bx = x + (k)*w - fontSize/3
-            by = y + (j)*h+h/2 + fontSize/2
-            order = firstBar[k] + j + 1
-            doreme(bx, by, fontSize, order, ctx)
-
-w = 20
-h = 30
-# 將前面的水平線與垂直線繪圖改用 background 繪圖
-background(100, 250, w, h, 5, 4, ctx)
-&lt;/script&gt;
-
-&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
-
-&lt;canvas id="chord1" width="600" height="400"&gt;&lt;/canvas&gt;
-
-&lt;script type="text/python3"&gt;
-from browser import document as doc
-import math
-# 準備繪圖畫布
-canvas = doc["chord1"]
-ctx = canvas.getContext("2d")
-
-'''
-# 改用 background 函式繪圖
-# 水平線
-for i in range(5):
-    ctx.beginPath()
-# 設定線的寬度為 1 個單位
-    if i == 0:
-        ctx.lineWidth = 7
-    else:
-        ctx.lineWidth = 1
-    ctx.moveTo(99, 100+i*30)
-    ctx.lineTo(201, 100+i*30)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    ctx.stroke()
-    ctx.closePath()
-
-# 垂直線
-for i in range(6):
-    ctx.beginPath()
-# 設定線的寬度為 1 個單位
-    ctx.lineWidth = 1
-    ctx.moveTo(100+i*20, 100)
-    ctx.lineTo(100+i*20, 220)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    ctx.stroke()
-    ctx.closePath()
-'''
-def canvasText(x, y, fontSize, string, sup, sub, color, ctx):
-    # 標定各弦音符號, 以及把位編號
-    ctx.beginPath()
-    ctx.fillStyle = color
-    ctx.strokeStyle = color
-    #ctx.font = "20px Arial"
-    ctx.font = str(fontSize)+ "px Arial"
-    ctx.fillText(string, x, y)
-    ctx.font = str(fontSize-8)+ "px Arial"
-    if sup != "":
-        ctx.fillText(sup, x+fontSize/1.6, y-fontSize/2)
-    if sub != "":
-        ctx.fillText(sup, x+fontSize/1.6, y)
-    ctx.fill()
-    ctx.stroke()
-    ctx.closePath()
-
-# 設法利用運算印出吉他各把位的音名
-def doreme(x, y, fontSize, order, ctx):
-    # EADGBE (guitar string)
-    # FgGaAbBCdDeE (C=Do, D=Re, E=Mi)
-    #簡譜 1 2 3 4 5 6 7 
-    #音名 C D E F G A B 
-    #唱名 Do Re Mi Fa Sol La Ti 
-
-    # 讓音名數列可以每 12 音名後, 升高 key 後從頭開始
-    if order &gt; 12:
-        order = order % 12
-
-    if order == 1:
-        canvasText(x, y, fontSize, "A", "", "", "black", ctx)
-    elif order ==2:
-        canvasText(x, y, fontSize, "B", "b", "", "red", ctx)
-    elif order == 3:
-        canvasText(x, y, fontSize, "B", "", "", "black", ctx)
-    elif order == 4:
-        canvasText(x, y, fontSize, "C", "", "", "black", ctx)
-    elif order == 5:
-        canvasText(x, y, fontSize, "D", "b", "", "red", ctx)
-    elif order == 6:
-        canvasText(x, y, fontSize, "D", "", "", "black", ctx)
-    elif order == 7:
-        canvasText(x, y, fontSize, "E", "b", "", "red", ctx)
-    elif order == 8:
-        canvasText(x, y, fontSize, "E", "", "", "black", ctx)
-    elif order == 9:
-        canvasText(x, y, fontSize, "F", "", "", "black", ctx)
-    elif order == 10:
-        canvasText(x, y, fontSize, "G", "b", "", "red", ctx)
-    elif order == 11:
-        canvasText(x, y, fontSize, "G", "", "", "black", ctx)
-    elif order == 12:
-        canvasText(x, y, fontSize, "A", "b", "", "red", ctx)
-    else:
-        canvasText(x, y, fontSize, "Error", "", "", "red", ctx)
-
-def background(x, y, xinc, yinc, xnum, ynum, ctx):
-    # 水平線
-    for i in range(ynum+1):
-        ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-        if i == 0:
-            ctx.lineWidth = 7
-        else:
-            ctx.lineWidth = 1
-        ctx.moveTo(x-1, y+i*yinc)
-        ctx.lineTo(x+xnum*xinc+1, y+i*yinc)
-        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-        ctx.strokeStyle = "blue"
-        ctx.stroke()
-        ctx.closePath()
-
-    # 垂直線
-    for i in range(xnum+1):
-        ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-        ctx.lineWidth = 1
-        ctx.moveTo(x+i*xinc, y)
-        ctx.lineTo(x+i*xinc, y+ynum*yinc)
-        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-        ctx.strokeStyle = "blue"
-        ctx.stroke()
-        ctx.closePath()
-
-    ####################################
-    # 以下利用數列運算, 從已知第1把位的音名分別推算各把位的音名
-    # 吉他初始音名次序 816(11)38
-    ####################################
-    firstBar = [12, 5, 11, 4, 7, 12]
-    # j 為往下增量
-    for j in range(3):
-        # k 為 往右把位初始值
-        fontSize = 15 
-        for k in range(6):
-            bx = x + (k)*w - fontSize/3
-            by = y + (j)*h+h/2 + fontSize/2
-            order = firstBar[k] + j + 1
-            doreme(bx, by, fontSize, order, ctx)
-
-w = 20
-h = 30
-# 將前面的水平線與垂直線繪圖改用 background 繪圖
-background(250, 250, w, h, 5, 3, ctx)
-&lt;/script&gt;</summary><category term="Brython"></category></entry><entry><title>W13</title><link href="./w13.html" rel="alternate"></link><published>2016-12-05T12:00:00+08:00</published><updated>2016-12-05T12:00:00+08:00</updated><author><name>40523231</name></author><id>tag:,2016-12-05:./w13.html</id><summary type="html">&lt;p&gt;畫線練習&lt;/p&gt;
+&lt;/script&gt;</summary><category term="每週練習"></category></entry><entry><title>W13</title><link href="./w13.html" rel="alternate"></link><published>2016-12-05T12:00:00+08:00</published><updated>2016-12-05T12:00:00+08:00</updated><author><name>40523209</name></author><id>tag:,2016-12-05:./w13.html</id><summary type="html">&lt;p&gt;畫線練習&lt;/p&gt;
 
 
 &lt;p&gt;畫線練習&lt;/p&gt;
@@ -1819,6 +317,11 @@ def background(x, y, xinc, yinc, xnum, ynum, ctx):
     for i in sixString:
         ctx.fillText(i, x-7+stringNum*xinc, y-10)
         stringNum = stringNum + 1
+    num = 1
+    for j in range(1,20,1):
+        ctx.fillText(j,50,95+num*yinc)
+        num = num + 1
+
     ctx.fill()
     ctx.stroke()
     ctx.closePath()
@@ -1831,7 +334,7 @@ def background(x, y, xinc, yinc, xnum, ynum, ctx):
     ####################################
     firstBar = [8, 1, 6, 11, 3, 8]
     # j 為往下增量
-    for j in range(18):
+    for j in range(19):
         # k 為 往右把位初始值
         fontSize = 15 
         for k in range(6):
@@ -1839,6 +342,7 @@ def background(x, y, xinc, yinc, xnum, ynum, ctx):
             by = y + (j)*h+h/2 + fontSize/2
             order = firstBar[k] + j + 1
             doreme(bx, by, fontSize, order, ctx)
+
 
 
 # 一開始 x, y 為圓球圓心, 但是為了配合和弦繪圖
@@ -1869,7 +373,7 @@ y = 200
 w = 20
 h = 30
 # 將前面的水平線與垂直線繪圖改用 background 繪圖
-background(100, 100, w, h, 5, 18, ctx)
+background(100, 100, w, h, 5, 19, ctx)
 #background(x, y, w, h, 5, 4, ctx)
 #background(100, 300, 10, 10, 5, 4, ctx)
 #background(300, 100, 10, 10, 5, 12, ctx)
@@ -1879,7 +383,7 @@ background(100, 100, w, h, 5, 18, ctx)
       #  ball(x, y, w, h, i+1, j+1, 'black', ctx)
 #ball(x, y, w, h, 1, 4, 'red', ctx)
 #ball(300, 300, 30, 20, 1, 1, 9, 'black', ctx)
-&lt;/script&gt;</summary><category term="使用導引"></category></entry><entry><title>W13</title><link href="./w13.html" rel="alternate"></link><published>2016-12-05T12:00:00+08:00</published><updated>2016-12-05T12:00:00+08:00</updated><author><name>40523231</name></author><id>tag:,2016-12-05:./w13.html</id><summary type="html">&lt;p&gt;畫線練習&lt;/p&gt;
+&lt;/script&gt;</summary><category term="使用導引"></category></entry><entry><title>W12</title><link href="./w12.html" rel="alternate"></link><published>2016-11-28T12:00:00+08:00</published><updated>2016-11-28T12:00:00+08:00</updated><author><name>40523209</name></author><id>tag:,2016-11-28:./w12.html</id><summary type="html">&lt;p&gt;畫19格吉他譜&lt;/p&gt;
 
 
 &lt;p&gt;畫線練習&lt;/p&gt;
@@ -2030,6 +534,11 @@ def background(x, y, xinc, yinc, xnum, ynum, ctx):
     for i in sixString:
         ctx.fillText(i, x-7+stringNum*xinc, y-10)
         stringNum = stringNum + 1
+    num = 1
+    for j in range(1,20,1):
+        ctx.fillText(j,50,95+num*yinc)
+        num = num + 1
+
     ctx.fill()
     ctx.stroke()
     ctx.closePath()
@@ -2042,7 +551,7 @@ def background(x, y, xinc, yinc, xnum, ynum, ctx):
     ####################################
     firstBar = [8, 1, 6, 11, 3, 8]
     # j 為往下增量
-    for j in range(18):
+    for j in range(0):
         # k 為 往右把位初始值
         fontSize = 15 
         for k in range(6):
@@ -2050,6 +559,7 @@ def background(x, y, xinc, yinc, xnum, ynum, ctx):
             by = y + (j)*h+h/2 + fontSize/2
             order = firstBar[k] + j + 1
             doreme(bx, by, fontSize, order, ctx)
+
 
 
 # 一開始 x, y 為圓球圓心, 但是為了配合和弦繪圖
@@ -2080,7 +590,7 @@ y = 200
 w = 20
 h = 30
 # 將前面的水平線與垂直線繪圖改用 background 繪圖
-background(100, 100, w, h, 5, 18, ctx)
+background(100, 100, w, h, 5, 19, ctx)
 #background(x, y, w, h, 5, 4, ctx)
 #background(100, 300, 10, 10, 5, 4, ctx)
 #background(300, 100, 10, 10, 5, 12, ctx)
@@ -2090,7 +600,107 @@ background(100, 100, w, h, 5, 18, ctx)
       #  ball(x, y, w, h, i+1, j+1, 'black', ctx)
 #ball(x, y, w, h, 1, 4, 'red', ctx)
 #ball(300, 300, 30, 20, 1, 1, 9, 'black', ctx)
-&lt;/script&gt;</summary><category term="使用導引"></category></entry><entry><title>W11</title><link href="./w11.html" rel="alternate"></link><published>2016-11-28T12:00:00+08:00</published><updated>2016-11-28T12:00:00+08:00</updated><author><name>40523231</name></author><id>tag:,2016-11-28:./w11.html</id><summary type="html">&lt;p&gt;畫線練習&lt;/p&gt;
+&lt;/script&gt;
+
+&lt;h6&gt;&lt;/h6&gt;
+&lt;p&gt;&lt;pre class="brush: python"&gt;
+&lt;!-- 導入 Brython 標準程式庫 --&gt;&lt;/p&gt;
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;h1&gt;1-19數字&lt;/h1&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ctx.beginPath()
+
+ctx.fillText = &amp;#39;black&amp;#39;
+
+ctx.strokeStyle = &amp;quot;black&amp;quot;
+
+num = 1
+for j in range(1,20,1):
+    ctx.fillText(j,50,95+num*yinc)
+    num = num + 1
+
+ctx.fillText()
+ctx.stroke()
+ctx.closePath()
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;&lt;/script&gt;    &lt;/p&gt;
+&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
+
+&lt;canvas id="chord1" width="600" height="1000"&gt;&lt;/canvas&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import math
+# 準備繪圖畫布
+canvas = doc["chord1"]
+ctx = canvas.getContext("2d")
+
+'''
+# 改用 background 函式繪圖
+# 水平線
+for i in range(5):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    if i == 0:
+        ctx.lineWidth = 7
+    else:
+        ctx.lineWidth = 1
+    ctx.moveTo(99, 100+i*30)
+    ctx.lineTo(201, 100+i*30)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+# 垂直線
+for i in range(6):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    ctx.lineWidth = 1
+    ctx.moveTo(100+i*20, 100)
+    ctx.lineTo(100+i*20, 220)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()   
+
+
+
+x = 300
+y = 200
+w = 20
+h = 30
+
+background(100, 100, w, h, 5, 19, ctx)
+
+&lt;/script&gt;
+
+&lt;/pre&gt;</summary><category term="使用導引"></category></entry><entry><title>W11</title><link href="./w11.html" rel="alternate"></link><published>2016-11-27T12:00:00+08:00</published><updated>2016-11-27T12:00:00+08:00</updated><author><name>40523209</name></author><id>tag:,2016-11-27:./w11.html</id><summary type="html">&lt;p&gt;畫線練習&lt;/p&gt;
 
 
 &lt;p&gt;畫線練習&lt;/p&gt;
@@ -3312,116 +1922,7 @@ ctx.closePath()
 
 &lt;/script&gt;
 
-&lt;/pre&gt;</summary><category term="使用導引"></category></entry><entry><title>w12</title><link href="./w12.html" rel="alternate"></link><published>2016-11-28T12:00:00+08:00</published><updated>2016-11-28T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-11-28:./w12.html</id><summary type="html">&lt;!-- 導入 Brython 標準程式庫 --&gt;
-
-&lt;script type="text/javascript" 
-    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
-&lt;/script&gt;
-
-&lt;!-- 啟動 Brython --&gt;
-
-&lt;script&gt;
-window.onload=function(){
-brython(1);
-}
-&lt;/script&gt;
-
-&lt;pre class="brush:python"&gt;
-
-&lt;!-- 以下實際利用  Brython 畫一條直線 --&gt;
-&lt;canvas id="japanflag1" width="600" height="250"&gt;&lt;/canvas&gt;
-&lt;script type="text/python3"&gt;
-from browser import document as doc
-import math
-# 準備繪圖畫布
-canvas = doc["japanflag1"]
-ctx = canvas.getContext("2d")
-
-
-&lt;!-- A Major --&gt;
-&lt;canvas id="japanflag3" width="600" height="250"&gt;&lt;/canvas&gt;
-&lt;script type="text/python3"&gt;
-from browser import document as doc
-import math
-canvas = doc["japanflag3"]
-ctx = canvas.getContext("2d")
-
- #垂直
-for i in range(6):
-    ctx.beginPath()
-    ctx.lineWidth = 1
-    ctx.moveTo(100+i*20,50)
-    ctx.lineTo(100+i*20,150)
-    ctx.strokeStyle = "blue"
-    ctx.stroke()
-    ctx.closePath()
-#水平
-for i in range(5):
-    ctx.beginPath()
-    if i == 0:
-        ctx.lineWidth = 7
-    else:
-        ctx.lineWidth = 1
-    ctx.moveTo(99,50+i*25)
-    ctx.lineTo(201,50+i*25)
-    ctx.strokeStyle = "blue"
-    ctx.stroke()
-    ctx.closePath()
-
-#A Major 
-ctx.beginPath()
-ctx.fillStyle = 'black'
-ctx.strokeStyle = "black"
-ctx.font = "25px Arial"
-ctx.fillText("A Major", 110, 25)
-ctx.fill()
-ctx.stroke()
-ctx.closePath()
-
-# 1.2.3
-ctx.beginPath()
-ctx.fillStyle = 'black'
-ctx.strokeStyle = "black"
-for i in range(3):
-    ctx.arc(140+i*20, 87.5, 7, 0, 2*math.pi, False)
-ctx.fill()
-ctx.stroke()
-ctx.closePath()
-ctx.beginPath()
-ctx.fillStyle = 'white'
-ctx.font = "16px Arial"
-ctx.fillText("1", 135, 92.5)
-ctx.fillText("2", 155, 92.5)
-ctx.fillText("3", 175, 92.5)
-ctx.fill()
-ctx.stroke()
-ctx.closePath()
-
-# o
-ctx.beginPath()
-ctx.arc(120, 40, 5, 0, 2*math.pi, False)
-ctx.lineWidth =3
-ctx.strokeStyle = "black"
-ctx.stroke()
-ctx.closePath()
-ctx.beginPath()
-ctx.arc(200, 40, 5, 0, 2*math.pi, False)
-ctx.lineWidth =3
-ctx.strokeStyle = "black"
-ctx.stroke()
-ctx.closePath()
-# x
-ctx.beginPath()
-#ctx.arc(100, 40, 5, 0, 2*math.pi, False)
-ctx.moveTo(95, 35)
-ctx.lineTo(105, 45)
-ctx.moveTo(105, 35)
-ctx.lineTo(95, 45)
-ctx.lineWidth =3
-ctx.strokeStyle = "black"
-ctx.stroke()
-ctx.closePath()
-&lt;/script&gt;</summary><category term="使用導引"></category><category term="創造力"></category><category term="表達能力"></category><category term="協同設計"></category></entry><entry><title>W10</title><link href="./w10.html" rel="alternate"></link><published>2016-11-14T12:00:00+08:00</published><updated>2016-11-14T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-11-14:./w10.html</id><summary type="html">&lt;p&gt;畫線練習&lt;/p&gt;
+&lt;/pre&gt;</summary><category term="使用導引"></category></entry><entry><title>W10</title><link href="./w10.html" rel="alternate"></link><published>2016-11-14T12:00:00+08:00</published><updated>2016-11-14T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-11-14:./w10.html</id><summary type="html">&lt;p&gt;畫線練習&lt;/p&gt;
 
 
 &lt;p&gt;畫線練習&lt;/p&gt;
@@ -3904,7 +2405,7 @@ for i in not_in_group:
     container3 &lt;= "第"+str(n)+"位: "+ str(i)
     n = n + 1
     container3 &lt;= html.BR()
-&lt;/script&gt;</summary><category term="使用導引"></category></entry><entry><title>2016Fall 程式練習題123</title><link href="./2016fall-cheng-shi-lian-xi-ti-123.html" rel="alternate"></link><published>2016-10-22T12:00:00+08:00</published><updated>2016-10-22T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-10-22:./2016fall-cheng-shi-lian-xi-ti-123.html</id><summary type="html">&lt;p&gt;已知截至第六週 2016fallcpa 的分組資料位於倉儲中的 &lt;a href="./../w6_group.txt"&gt;w6_group.txt&lt;/a&gt;, 而從學校修課系統下載的修課人員名條則為 &lt;a href="./../w6_list.txt"&gt;w6_list.txt&lt;/a&gt;, 請各組著手練習, 找出尚未納入分組的人員名單, 並研擬如何處置上課一個半月卻尚未進入情況的學員?&lt;/p&gt;
+&lt;/script&gt;</summary><category term="使用導引"></category></entry><entry><title>2016Fall 程式練習題</title><link href="./2016fall-cheng-shi-lian-xi-ti.html" rel="alternate"></link><published>2016-10-22T12:00:00+08:00</published><updated>2016-10-22T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-10-22:./2016fall-cheng-shi-lian-xi-ti.html</id><summary type="html">&lt;p&gt;已知截至第六週 2016fallcpa 的分組資料位於倉儲中的 &lt;a href="./../w6_group.txt"&gt;w6_group.txt&lt;/a&gt;, 而從學校修課系統下載的修課人員名條則為 &lt;a href="./../w6_list.txt"&gt;w6_list.txt&lt;/a&gt;, 請各組著手練習, 找出尚未納入分組的人員名單, 並研擬如何處置上課一個半月卻尚未進入情況的學員?&lt;/p&gt;
 
 
 &lt;p&gt;以下利用 Brython 讀取位於倉儲中的 &lt;a href="./../w6_list.txt"&gt;w6_list.txt&lt;/a&gt; 與 &lt;a href="./../w6_group.txt"&gt;w6_group.txt&lt;/a&gt; 資料檔案.&lt;/p&gt;

@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>W14 練習 - 2016Fall CPB 課程網誌 (虎尾科大MDE)</title>
+    <title>W10 - 2016Fall CPB 課程網誌 (虎尾科大MDE)</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -166,21 +166,21 @@ init_mathjax = function() {
 init_mathjax();
 </script>
 
-<link rel="canonical" href="./w14-lian-xi.html">
+<link rel="canonical" href="./w10.html">
 
-        <meta name="author" content="40523209" />
-        <meta name="keywords" content="每週練習" />
-        <meta name="description" content="以下為第十四週開始的城市練習,要利用 http://mde.tw/2016fallcp/course/Python3Programs.txt 要整理Brython 的用法." />
+        <meta name="author" content="yen" />
+        <meta name="keywords" content="使用導引" />
+        <meta name="description" content="畫線練習" />
 
         <meta property="og:site_name" content="2016Fall CPB 課程網誌 (虎尾科大MDE)" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="W14 練習"/>
-        <meta property="og:url" content="./w14-lian-xi.html"/>
-        <meta property="og:description" content="以下為第十四週開始的城市練習,要利用 http://mde.tw/2016fallcp/course/Python3Programs.txt 要整理Brython 的用法."/>
-        <meta property="article:published_time" content="2016-12-12" />
+        <meta property="og:title" content="W10"/>
+        <meta property="og:url" content="./w10.html"/>
+        <meta property="og:description" content="畫線練習"/>
+        <meta property="article:published_time" content="2016-11-14" />
             <meta property="article:section" content="Misc" />
-            <meta property="article:tag" content="每週練習" />
-            <meta property="article:author" content="40523209" />
+            <meta property="article:tag" content="使用導引" />
+            <meta property="article:author" content="yen" />
 
 
     <!-- Bootstrap -->
@@ -287,10 +287,10 @@ init_mathjax();
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="./w14-lian-xi.html"
+                    <a href="./w10.html"
                        rel="bookmark"
-                       title="Permalink to W14 練習">
-                        W14 練習
+                       title="Permalink to W10">
+                        W10
                     </a>
                 </h1>
             </header>
@@ -300,20 +300,22 @@ init_mathjax();
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-12-12T14:35:00+08:00"> 週一 12 十二月 2016</time>
+        <i class="fa fa-calendar"></i><time datetime="2016-11-14T12:00:00+08:00"> 週一 14 十一月 2016</time>
     </span>
             <span class="label label-default">By</span>
-            <a href="./author/40523209.html"><i class="fa fa-user"></i> 40523209</a>
+            <a href="./author/yen.html"><i class="fa fa-user"></i> yen</a>
 
 
 
 <span class="label label-default">Tags</span>
-	<a href="./tag/mei-zhou-lian-xi.html">每週練習</a>
+	<a href="./tag/shi-yong-dao-yin.html">使用導引</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>以下為第十四週開始的城市練習,要利用 <a href="http://mde.tw/2016fallcp/course/Python3Programs.txt">http://mde.tw/2016fallcp/course/Python3Programs.txt</a> 要整理Brython 的用法.
-</p>
+                <p>畫線練習</p>
+
+
+<p>畫線練習</p>
 <!-- 導入 Brython 標準程式庫 -->
 
 <script type="text/javascript" 
@@ -328,27 +330,388 @@ brython(1);
 }
 </script>
 
-<div id ="ex1"></div>
+<!-- 以下實際利用  Brython 畫兩條直線 -->
+
+<canvas id="japanflag1" width="600" height="200"></canvas>
 
 <script type="text/python3">
 from browser import document as doc
-container = doc['ex1']
+import math
+# 準備繪圖畫布
+canvas = doc["japanflag1"]
+ctx = canvas.getContext("2d")
 
-container<="W14練習"
+# 以下可以利用 ctx 物件進行畫圖
+# 先畫一條直線
+ctx.beginPath()
+# 設定線的寬度為 1 個單位
+ctx.lineWidth = 1
+# 將畫筆移動到 (100, 100) 座標點
+ctx.moveTo(100, 100)
+# 然後畫直線到 (150, 200) 座標點
+ctx.lineTo(150, 200)
+# 畫右上左下的斜線
+ctx.moveTo(150, 100)
+ctx.lineTo(100, 200)
+# 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+ctx.strokeStyle = "blue"
+# 實際執行畫線
+ctx.stroke()
+ctx.closePath()
 </script>
 
-<div id ="ex2"></div>
+<!-- 以下實際利用  Brython 畫上下垂直線 -->
+
+<canvas id="japanflag2" width="600" height="200"></canvas>
+
+<script type="text/python3">
+from browser import document as doc
+import math
+# 準備繪圖畫布
+canvas = doc["japanflag2"]
+ctx = canvas.getContext("2d")
+
+# 以下可以利用 ctx 物件進行畫圖
+# 先畫一條直線
+ctx.beginPath()
+# 設定線的寬度為 1 個單位
+ctx.lineWidth = 1
+
+for i in range(5):
+    ctx.moveTo(100+i*10, 100)
+    ctx.lineTo(100+i*10, 200)
+
+# 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+ctx.strokeStyle = "blue"
+# 實際執行畫線
+ctx.stroke()
+ctx.closePath()
+</script>
+
+<!-- 以下實際利用  Brython 畫方格線 -->
+
+<canvas id="japanflag3" width="600" height="300"></canvas>
+
+<div id="container3"></div>
 
 <script type="text/python3">
 from browser import document as doc
 from browser import html
-container = doc['ex2']
-mystring = input("要印出什麼字串?")
-mynum = input("要印幾次?")
+import math
+import re
+# 準備繪圖畫布
+canvas = doc["japanflag3"]
+container = doc["container3"]
+ctx = canvas.getContext("2d")
+# 以下可以利用 ctx 物件進行畫圖
 
-for i in range(int(mynum)):
-    #container<="W14練習-2"+html.BR()
-    container<=mystring+html.BR()
+# 水平線
+for i in range(5):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    if i == 0:
+        ctx.lineWidth = 7
+    else:
+        ctx.lineWidth = 1
+    ctx.moveTo(99, 100+i*30)
+    ctx.lineTo(201, 100+i*30)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+# 垂直線
+for i in range(6):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    ctx.lineWidth = 1
+    ctx.moveTo(100+i*20, 100)
+    ctx.lineTo(100+i*20, 220)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+# 1 與 AMajor
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "30px Arial"
+ctx.fillText("AMajor", 100, 70)
+
+
+# 1
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(140, 145, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 135, 150)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 2
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(160, 145, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("2", 155, 150)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(180, 145, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("3", 175, 150)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(120, 80, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.arc(200, 80, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+# x
+ctx.beginPath()
+#ctx.arc(100, 80, 5, 0, 2*math.pi, False)
+ctx.moveTo(95, 75)
+ctx.lineTo(105, 85)
+ctx.moveTo(105, 75)
+ctx.lineTo(95, 85)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+</script>
+
+<p>上述
+<pre class="brush:python"></p>
+<!-- 以下實際利用  Brython 畫兩條直線 -->
+
+<canvas id="japanflag1" width="600" height="200"></canvas>
+
+<script type="text/python3">
+from browser import document as doc
+import math
+# 準備繪圖畫布
+canvas = doc["japanflag1"]
+ctx = canvas.getContext("2d")
+
+# 以下可以利用 ctx 物件進行畫圖
+# 先畫一條直線
+ctx.beginPath()
+# 設定線的寬度為 1 個單位
+ctx.lineWidth = 1
+# 將畫筆移動到 (100, 100) 座標點
+ctx.moveTo(100, 100)
+# 然後畫直線到 (150, 200) 座標點
+ctx.lineTo(150, 200)
+# 畫右上左下的斜線
+ctx.moveTo(150, 100)
+ctx.lineTo(100, 200)
+# 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+ctx.strokeStyle = "blue"
+# 實際執行畫線
+ctx.stroke()
+ctx.closePath()
+</script>
+
+<!-- 以下實際利用  Brython 畫上下垂直線 -->
+
+<canvas id="japanflag2" width="600" height="200"></canvas>
+
+<script type="text/python3">
+from browser import document as doc
+import math
+# 準備繪圖畫布
+canvas = doc["japanflag2"]
+ctx = canvas.getContext("2d")
+
+# 以下可以利用 ctx 物件進行畫圖
+# 先畫一條直線
+ctx.beginPath()
+# 設定線的寬度為 1 個單位
+ctx.lineWidth = 1
+
+for i in range(5):
+    ctx.moveTo(100+i*10, 100)
+    ctx.lineTo(100+i*10, 200)
+
+# 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+ctx.strokeStyle = "blue"
+# 實際執行畫線
+ctx.stroke()
+ctx.closePath()
+</script>
+
+<!-- 以下實際利用  Brython 畫方格線 -->
+
+<canvas id="japanflag3" width="600" height="300"></canvas>
+
+<div id="container3"></div>
+
+<script type="text/python3">
+from browser import document as doc
+from browser import html
+import math
+import re
+# 準備繪圖畫布
+canvas = doc["japanflag3"]
+container = doc["container3"]
+ctx = canvas.getContext("2d")
+# 以下可以利用 ctx 物件進行畫圖
+
+# 水平線
+for i in range(5):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    if i == 0:
+        ctx.lineWidth = 7
+    else:
+        ctx.lineWidth = 1
+    ctx.moveTo(99, 100+i*30)
+    ctx.lineTo(201, 100+i*30)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+# 垂直線
+for i in range(6):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    ctx.lineWidth = 1
+    ctx.moveTo(100+i*20, 100)
+    ctx.lineTo(100+i*20, 220)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+# 1 與 AMajor
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "30px Arial"
+ctx.fillText("AMajor", 100, 70)
+
+
+# 1
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(140, 145, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 135, 150)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 2
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(160, 145, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("2", 155, 150)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(180, 145, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("3", 175, 150)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(120, 80, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+ctx.beginPath()
+ctx.arc(200, 80, 5, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+# x
+ctx.beginPath()
+#ctx.arc(100, 80, 5, 0, 2*math.pi, False)
+ctx.moveTo(95, 75)
+ctx.lineTo(105, 85)
+ctx.moveTo(105, 75)
+ctx.lineTo(95, 85)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+
+
+
+
+
+
 </script>
             </div>
             <!-- /.entry-content -->

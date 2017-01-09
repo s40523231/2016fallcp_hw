@@ -165,15 +165,14 @@
 <v t="amd.20160727120222.1"><vh>@edit 20160921.md</vh></v>
 <v t="amd.20160106093454.1" a="E"><vh>yen 所寫的網誌文章</vh>
 <v t="amd.20160727114506.1" a="E"><vh>201609</vh>
-<v t="leo.20161014142409.1"><vh>@edit 20161014.md</vh></v>
-<v t="leo.20161024160947.1"><vh>@edit 20161024.md</vh></v>
-<v t="leo.20161031142610.1"><vh>@edit 20161031.md</vh></v>
 <v t="leo.20161114144449.1"><vh>@edit 20161114.md</vh></v>
 <v t="leo.20161121144805.1"><vh>@edit 20161121.md</vh></v>
+<v t="leo.20161212135550.1"><vh>@edit 20161128.md</vh></v>
 <v t="leo.20161205150442.1"><vh>@edit 20161205.md</vh></v>
-<v t="leo.20161212141544.1"><vh>@edit 20161212.md</vh></v>
-<v t="leo.20170108155305.1"><vh>@edit 20170108.md</vh></v>
-<v t="leo.20170109134358.1"><vh>@edit 20170109.md</vh></v>
+<v t="leo.20161212141503.1"><vh>@edit 20161212.md</vh></v>
+<v t="leo.20161219141515.1"><vh>@edit 20161219.md</vh></v>
+<v t="leo.20161226131333.1"><vh>@edit 20161226.md</vh></v>
+<v t="leo.20170109132441.1"><vh>@edit 20170109.md</vh></v>
 </v>
 </v>
 </v>
@@ -185,18 +184,13 @@
 <v t="amd.20161004202833.1"><vh>@edit ../README.md</vh></v>
 <v t="yen.20161022111056.1"><vh>@button https server</vh></v>
 <v t="yen.20161022151749.1"><vh>產生 .key 與 .crt</vh></v>
-<v t="leo.20161107164237.2" a="E"><vh>Recovered Nodes</vh>
+<v t="leo.20161107164237.2"><vh>Recovered Nodes</vh>
 <v t="leo.20161107164237.3"><vh>Recovered node "封面投影片內容" from @clean index.html</vh>
 <v t="leo.20161107164237.4"><vh>old:封面投影片內容</vh></v>
 <v t="leo.20161107164237.5"><vh>new:封面投影片內容</vh></v>
 </v>
 </v>
-<v t="leo.20170108154652.1" a="E"><vh>Recovered Nodes</vh>
-<v t="leo.20170108154652.2"><vh>Recovered node "封面投影片內容" from @clean index.html</vh>
-<v t="leo.20170108154652.3"><vh>old:封面投影片內容</vh></v>
-<v t="leo.20170108154652.4"><vh>new:封面投影片內容</vh></v>
-</v>
-</v>
+<v t="leo.20161212143011.1"><vh>@button https server</vh></v>
 </vnodes>
 <tnodes>
 <t tx="amd.20151215170031.1"></t>
@@ -325,11 +319,10 @@ print("hello")
 ### 虎科大機械設計工程系
 
 &lt;small&gt;
-Created by [s40523231](http://s40523231.github.io/kmolab/blog/)
+Created by [40523231](https://s40523231.github.io/2016fallcp_hw/blog/)
 &lt;/small&gt;
 
 [40523231](blog/index.html)
-
 </t>
 <t tx="amd.20161004104641.1">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
@@ -529,42 +522,28 @@ Created by [40523209](https://s40523209.github.io/2016fallcp_hw/blog/)
 
 [40523209](blog/index.html)
 </t>
-<t tx="leo.20170108154652.1"></t>
-<t tx="leo.20170108154652.2">(uncached) amd.20161004095719.2
-Diff...
-  # 2016Fall 計算機程式課程
-  
-  ### 虎科大機械設計工程系
-  
-  &lt;small&gt;
-- Created by [s40523231](http://chiamingyen.github.io/kmolab/blog/)
-+ Created by [40523231](https://s40523231.github.io/2016fallcp_hw/blog/)
-  &lt;/small&gt;
-  
-  [40523231](blog/index.html)
-- 
-</t>
-<t tx="leo.20170108154652.3"># 2016Fall 計算機程式課程
+<t tx="leo.20161212143011.1">@language python
+import os
+import subprocess
+import threading
+import http.server, ssl
 
-### 虎科大機械設計工程系
+def domake():
+    # build directory
+    os.chdir("./../")
+    server_address = ('localhost', 6443)
+    httpd = http.server.HTTPServer(server_address, http.server.SimpleHTTPRequestHandler)
+    httpd.socket = ssl.wrap_socket(httpd.socket,
+                                   server_side=True,
+                                   certfile='localhost.crt',
+                                   keyfile='localhost.key',
+                                   ssl_version=ssl.PROTOCOL_TLSv1)
+    print("5443 https server started")
+    httpd.serve_forever()
 
-&lt;small&gt;
-Created by [40523231](https://s40523231.github.io/2016fallcp_hw/blog/)
-&lt;/small&gt;
-
-[40523231](blog/index.html)
-</t>
-<t tx="leo.20170108154652.4"># 2016Fall 計算機程式課程
-
-### 虎科大機械設計工程系
-
-&lt;small&gt;
-Created by [s40523231](http://chiamingyen.github.io/kmolab/blog/)
-&lt;/small&gt;
-
-[40523231](blog/index.html)
-
-</t>
+# 利用執行緒執行 https 伺服器
+make = threading.Thread(target=domake)
+make.start()</t>
 <t tx="yen.20161011114704.1">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
 @others
@@ -1123,14 +1102,14 @@ import http.server, ssl
 def domake():
     # build directory
     os.chdir("./../")
-    server_address = ('localhost', 6443)
+    server_address = ('localhost', 5443)
     httpd = http.server.HTTPServer(server_address, http.server.SimpleHTTPRequestHandler)
     httpd.socket = ssl.wrap_socket(httpd.socket,
                                    server_side=True,
                                    certfile='localhost.crt',
                                    keyfile='localhost.key',
                                    ssl_version=ssl.PROTOCOL_TLSv1)
-    print("6443 https server started")
+    print("5443 https server started")
     httpd.serve_forever()
 
 # 利用執行緒執行 https 伺服器

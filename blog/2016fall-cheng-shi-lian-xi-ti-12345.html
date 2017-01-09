@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>W14 練習 - 2016Fall CPB 課程網誌 (虎尾科大MDE)</title>
+    <title>2016Fall 程式練習題-12345 - 2016Fall CPB 課程網誌 (虎尾科大MDE)</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -166,21 +166,21 @@ init_mathjax = function() {
 init_mathjax();
 </script>
 
-<link rel="canonical" href="./w14-lian-xi.html">
+<link rel="canonical" href="./2016fall-cheng-shi-lian-xi-ti-12345.html">
 
-        <meta name="author" content="40523209" />
-        <meta name="keywords" content="每週練習" />
-        <meta name="description" content="以下為第十四週開始的城市練習,要利用 http://mde.tw/2016fallcp/course/Python3Programs.txt 要整理Brython 的用法." />
+        <meta name="author" content="yen" />
+        <meta name="keywords" content="使用導引" />
+        <meta name="description" content="1234已知截至第六週 2016fallcpa 的分組資料位於倉儲中的 w6_group.txt, 而從學校修課系統下載的修課人員名條則為 w6_list.txt, 請各組著手練習, 找出尚未納入分組的人員名單, 並研擬如何處置上課一個半月卻尚未進入情況的學員?" />
 
         <meta property="og:site_name" content="2016Fall CPB 課程網誌 (虎尾科大MDE)" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="W14 練習"/>
-        <meta property="og:url" content="./w14-lian-xi.html"/>
-        <meta property="og:description" content="以下為第十四週開始的城市練習,要利用 http://mde.tw/2016fallcp/course/Python3Programs.txt 要整理Brython 的用法."/>
-        <meta property="article:published_time" content="2016-12-12" />
+        <meta property="og:title" content="2016Fall 程式練習題-12345"/>
+        <meta property="og:url" content="./2016fall-cheng-shi-lian-xi-ti-12345.html"/>
+        <meta property="og:description" content="1234已知截至第六週 2016fallcpa 的分組資料位於倉儲中的 w6_group.txt, 而從學校修課系統下載的修課人員名條則為 w6_list.txt, 請各組著手練習, 找出尚未納入分組的人員名單, 並研擬如何處置上課一個半月卻尚未進入情況的學員?"/>
+        <meta property="article:published_time" content="2016-10-31" />
             <meta property="article:section" content="Misc" />
-            <meta property="article:tag" content="每週練習" />
-            <meta property="article:author" content="40523209" />
+            <meta property="article:tag" content="使用導引" />
+            <meta property="article:author" content="yen" />
 
 
     <!-- Bootstrap -->
@@ -287,10 +287,10 @@ init_mathjax();
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="./w14-lian-xi.html"
+                    <a href="./2016fall-cheng-shi-lian-xi-ti-12345.html"
                        rel="bookmark"
-                       title="Permalink to W14 練習">
-                        W14 練習
+                       title="Permalink to 2016Fall 程式練習題-12345">
+                        2016Fall 程式練習題-12345
                     </a>
                 </h1>
             </header>
@@ -300,56 +300,22 @@ init_mathjax();
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-12-12T14:35:00+08:00"> 週一 12 十二月 2016</time>
+        <i class="fa fa-calendar"></i><time datetime="2016-10-31T12:00:00+08:00"> 週一 31 十月 2016</time>
     </span>
             <span class="label label-default">By</span>
-            <a href="./author/40523209.html"><i class="fa fa-user"></i> 40523209</a>
+            <a href="./author/yen.html"><i class="fa fa-user"></i> yen</a>
 
 
 
 <span class="label label-default">Tags</span>
-	<a href="./tag/mei-zhou-lian-xi.html">每週練習</a>
+	<a href="./tag/shi-yong-dao-yin.html">使用導引</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>以下為第十四週開始的城市練習,要利用 <a href="http://mde.tw/2016fallcp/course/Python3Programs.txt">http://mde.tw/2016fallcp/course/Python3Programs.txt</a> 要整理Brython 的用法.
-</p>
-<!-- 導入 Brython 標準程式庫 -->
+                <p>1234已知截至第六週 2016fallcpa 的分組資料位於倉儲中的 <a href="./../w6_group.txt">w6_group.txt</a>, 而從學校修課系統下載的修課人員名條則為 <a href="./../w6_list.txt">w6_list.txt</a>, 請各組著手練習, 找出尚未納入分組的人員名單, 並研擬如何處置上課一個半月卻尚未進入情況的學員?</p>
 
-<script type="text/javascript" 
-    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js">
-</script>
 
-<!-- 啟動 Brython -->
-
-<script>
-window.onload=function(){
-brython(1);
-}
-</script>
-
-<div id ="ex1"></div>
-
-<script type="text/python3">
-from browser import document as doc
-container = doc['ex1']
-
-container<="W14練習"
-</script>
-
-<div id ="ex2"></div>
-
-<script type="text/python3">
-from browser import document as doc
-from browser import html
-container = doc['ex2']
-mystring = input("要印出什麼字串?")
-mynum = input("要印幾次?")
-
-for i in range(int(mynum)):
-    #container<="W14練習-2"+html.BR()
-    container<=mystring+html.BR()
-</script>
+<p>找出尚未納入分組的人員名單, 並研擬如何處置上課一個半月卻尚未進入情況的學員?</p>
             </div>
             <!-- /.entry-content -->
         </article>
