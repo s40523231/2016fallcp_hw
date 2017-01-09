@@ -3,9 +3,82 @@
 
 
 
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
+
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
 &lt;p&gt;W17 週心得與程式範例:&lt;/p&gt;
 &lt;p&gt;W16 週心得與程式範例:&lt;/p&gt;
+&lt;!-- 以下可以執行  Brython 程式 --&gt;
+
+&lt;div id="id3"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import html
+import random
+
+id3 = document["id3"]
+def guess(ev):
+    # 清除 id3 中的內容
+    id3.clear()
+    id3 &lt;= "開始玩猜數字遊戲" + html.BR()
+    標準答案 = random.randint(1, 100)
+    你猜的數字 = int(input("請輸入您所猜整數:"))
+    猜測次數 = 1
+    while 標準答案 != 你猜的數字:
+        if 標準答案 &lt; 你猜的數字:
+            #print("太大了，再猜一次 :)加油")
+            # 清除 id3 中的內容
+            id3.clear()
+            id3 &lt;= "猜第" + str(猜測次數) + "次, 太大了，再猜一次 :)加油" + html.BR()
+        else:
+            #print("太小了，再猜一次 :)加油")
+            # 清除 id3 中的內容
+            id3.clear()
+            id3 &lt;= "猜第" + str(猜測次數) + "次, 太小了，再猜一次 :)加油" + html.BR()
+        你猜的數字 = int(input("請輸入您所猜整數:"))
+        猜測次數 += 1
+
+    #print("猜對了！總共猜了", 猜測次數, "次")
+    id3 &lt;= "猜對了！答案為" + str(標準答案) + ", 總共猜了" + str(猜測次數) + "次"
+
+document["but3"].bind("click", guess)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="but3"&gt;玩猜數字遊戲&lt;/button&gt;&lt;/p&gt;
+
 &lt;p&gt;W15 週心得與程式範例:&lt;/p&gt;
+&lt;div id="container"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+container = doc['container']
+
+def numPrint(ev):
+    mystring = ""
+    num = input("請輸入重複執行次數:")
+    #for i in range(1, 11):
+    for i in range(1, int(num)+1):
+        mystring += str(i) + ": hello mde" + html.BR()
+    container &lt;= mystring
+
+doc['w13'].bind('click',numPrint)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="w13"&gt;取重複執行次數後, 列印出來&lt;/button&gt;&lt;/p&gt;
+
 &lt;p&gt;其中各週心得請嵌入個人現場操作 vimeo 影片&lt;/p&gt;
 &lt;p&gt;以 pre 附上練習的範例執行,以及課程影片摘要&lt;/p&gt;</summary><category term="每週練習"></category></entry><entry><title>w16</title><link href="./w16.html" rel="alternate"></link><published>2016-12-26T14:35:00+08:00</published><updated>2016-12-26T14:35:00+08:00</updated><author><name>40523209</name></author><id>tag:,2016-12-26:./w16.html</id><summary type="html">&lt;h4&gt;W16&lt;/h4&gt;
 
