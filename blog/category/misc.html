@@ -167,7 +167,7 @@ init_mathjax();
 </script>
 
 
-    <meta name="author" content="40523209" />
+    <meta name="author" content="s40523231" />
     <meta name="keywords" content="Misc" />
 
     <!-- Open Graph tags -->
@@ -280,7 +280,7 @@ init_mathjax();
 
             <article>
                 <h2><a href="../2016fallcp-qi-mo-kao-zhou.html">2016fallcp 期末考週</a></h2>
-                <div class="summary"><h4>2016fallcp 期末考周</h4>
+                <div class="summary"><h4>2016fallcp 期末考週</h4>
 
 
                     <a class="btn btn-default btn-xs" href="../2016fallcp-qi-mo-kao-zhou.html">more ...</a>
@@ -288,11 +288,35 @@ init_mathjax();
             </article>
             <hr/>
             <article>
-                <h2><a href="../w16.html">w16</a></h2>
-                <div class="summary"><h4>W16</h4>
+                <h2><a href="../w16-lian-xi.html">W16 練習</a></h2>
+                <div class="summary"><!-- 導入 Brython 標準程式庫 -->
 
+<script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js">
+</script>
 
-                    <a class="btn btn-default btn-xs" href="../w16.html">more ...</a>
+<!-- 啟動 Brython -->
+
+<script>
+window.onload=function(){
+brython(1);
+}
+</script>
+
+<script type="text/python3">
+from browser import alert
+import random
+
+ans = random.randint(1, 100)
+
+a_in = int(input("輸入整數:"))
+guess = 1
+
+while ans != a_in:
+    if a_in < ans:
+        a_in = int(input("too small"))
+    else ...</script></!--></!-->
+                    <a class="btn btn-default btn-xs" href="../w16-lian-xi.html">more ...</a>
                 </div>
             </article>
             <hr/>
@@ -310,14 +334,6 @@ init_mathjax();
                 <div class="summary"><p>以下為第十四週開始的城市練習,要利用 <a href="http://mde.tw/2016fallcp/course/Python3Programs.txt">http://mde.tw/2016fallcp/course/Python3Programs.txt</a> 要整理Brython 的用法.
 
                     <a class="btn btn-default btn-xs" href="../w14-lian-xi.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="../w13.html">W13</a></h2>
-                <div class="summary"><p>畫線練習</p>
-
-                    <a class="btn btn-default btn-xs" href="../w13.html">more ...</a>
                 </div>
             </article>
             <hr/>
@@ -345,32 +361,7 @@ init_mathjax();
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="../2016fall-cheng-shi-lian-xi-ti-12345.html">2016Fall 程式練習題-12345</a></h2>
-                <div class="summary"><p>1234已知截至第六週 2016fallcpa 的分組資料位於倉儲中的 <a href="./../w6_group.txt">w6_group.txt</a>, 而從學校修課系統下載的修課人員名條則為 <a href="./../w6_list.txt">w6_list.txt</a>, 請各組著手練習, 找出尚未納入分組的人員名單, 並研擬如何處置上課一個半月卻尚未進入情況的學員?</p>
 
-                    <a class="btn btn-default btn-xs" href="../2016fall-cheng-shi-lian-xi-ti-12345.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="../2016fall-cheng-shi-lian-xi-ti-1234.html">2016Fall 程式練習題-1234</a></h2>
-                <div class="summary"><p>1234已知截至第六週 2016fallcpa 的分組資料位於倉儲中的 <a href="./../w6_group.txt">w6_group.txt</a>, 而從學校修課系統下載的修課人員名條則為 <a href="./../w6_list.txt">w6_list.txt</a>, 請各組著手練習, 找出尚未納入分組的人員名單, 並研擬如何處置上課一個半月卻尚未進入情況的學員?</p>
-
-                    <a class="btn btn-default btn-xs" href="../2016fall-cheng-shi-lian-xi-ti-1234.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-
-        <ul class="pagination">
-                <li class="prev disabled"><a href="#">&laquo;</a></li>
-                    <li class="active"><a
-                            href="../category/misc.html">1</a></li>
-                    <li class=""><a
-                            href="../category/misc2.html">2</a></li>
-                <li class="next"><a
-                        href="../category/misc2.html">&raquo;</a></li>
-        </ul>
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
@@ -386,8 +377,8 @@ init_mathjax();
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="../w16.html">
-                            w16
+                        <a href="../w16-lian-xi.html">
+                            W16 練習
                         </a>
                     </li>
                     <li class="list-group-item">
@@ -401,8 +392,8 @@ init_mathjax();
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="../w13.html">
-                            W13
+                        <a href="../w12.html">
+                            W12
                         </a>
                     </li>
                 </ul>
@@ -456,7 +447,7 @@ init_mathjax();
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2017 40523209
+         <div class="col-xs-10">&copy; 2017 s40523231
             &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
